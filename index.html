@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEVE — Autonomous Trading System</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b82f6'/><text y='.9em' x='50' text-anchor='middle' font-size='70' font-weight='800' fill='white'>S</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,sans-serif}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.7/Recharts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect,useCallback,createContext,useContext}=React;
+const {AreaChart,Area,XAxis,YAxis,Tooltip,ResponsiveContainer}=Recharts;
+
+const DATA_URL="data/steve_status.json";
+const REFRESH_MS=300000;
+
+const themes={dark:{bg:"linear-gradient(180deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%)",cardSolid:"#0f172a",card:"rgba(15,23,42,0.6)",cardBorder:"#1e293b",cardHover:"rgba(30,41,59,0.8)",text:"#f1f5f9",textSub:"#cbd5e1",textMuted:"#94a3b8",textDim:"#64748b",tooltipBg:"#0f172a",chipBg:"rgba(30,41,59,0.4)",inputBg:"rgba(15,23,42,0.8)",scrollThumb:"#1e293b",tableHover:"rgba(30,41,59,0.5)"},light:{bg:"linear-gradient(180deg,#f8fafc 0%,#eef2f7 50%,#f8fafc 100%)",cardSolid:"#ffffff",card:"rgba(255,255,255,0.9)",cardBorder:"#e2e8f0",cardHover:"rgba(241,245,249,1)",text:"#0f172a",textSub:"#334155",textMuted:"#64748b",textDim:"#94a3b8",tooltipBg:"#ffffff",chipBg:"rgba(241,245,249,0.8)",inputBg:"rgba(241,245,249,1)",scrollThumb:"#cbd5e1",tableHover:"rgba(241,245,249,1)"}};
+
+const lC="#f59e0b",pC="#3b82f6",gn="#22c55e",rd="#ef4444",pu="#8b5cf6";
+const mn={fontFamily:"'JetBrains Mono','Fira Code',monospace"};
+const TC=createContext(themes.dark);const uT=()=>useContext(TC);
+
+const fm=(n,d=2)=>n!=null?Number(n).toFixed(d):"\u2014";
+const fU=(n)=>n!=null?"$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}):"\u2014";
+const pP=(b,i)=>i?((b-i)/i*100):0;
+const pCol=(v)=>v>0.05?gn:v<-0.05?rd:"#94a3b8";
+const pBg=(v)=>v>0.05?gn+"18":v<-0.05?rd+"18":"rgba(148,163,184,0.1)";
+const dL=(s)=>{if(!s)return null;return Math.max(0,Math.ceil((new Date(new Date(s).getTime()+14*86400000)-new Date())/86400000));};
+const dPr=(s)=>{if(!s)return 0;return Math.min(100,((new Date()-new Date(s))/86400000/14)*100);};
+const tA=(d)=>{if(!d)return"N/A";const h=Math.floor((new Date()-new Date(d.replace(" ","T")+(d.includes("T")?"":"Z")))/3600000);return h<1?"now":h<24?h+"h ago":Math.floor(h/24)+"d ago";};
+const sM={searching:{c:"#fbbf24",l:"Searching"},waiting_results:{c:"#a78bfa",l:"Waiting"},candidate_ready:{c:gn,l:"Ready"},paper_testing:{c:pC,l:"Testing"},paper_complete:{c:gn,l:"Complete"}};
+const fPer=(data,p)=>{if(!data||p==="ALL")return data||[];const n=p==="1W"?7:p==="1M"?16:30;return data.slice(-Math.min(n,data.length));};
+const toPct=(data)=>{if(!data||!data.length)return[];const b=data[0].v;if(!b)return data;return data.map(p=>({d:p.d,v:((p.v-b)/b*100)}));};
+
+const Pill=({children,color,bg})=>React.createElement("span",{style:{padding:"3px 10px",borderRadius:6,fontSize:9,fontWeight:700,letterSpacing:.5,background:bg||color+"18",color:color||"#94a3b8",border:"1px solid "+(color||"#1e293b")+"30"}},children);
+
+function MC({data,pos,h=44,w=110}){const id="mc"+Math.random().toString(36).slice(2,6);return(
+  <ResponsiveContainer width={w} height={h}><AreaChart data={data||[]}>
+    <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={pos?gn:rd} stopOpacity={.25}/><stop offset="100%" stopColor={pos?gn:rd} stopOpacity={0}/></linearGradient></defs>
+    <Area type="monotone" dataKey="v" stroke={pos?gn:rd} strokeWidth={1.5} fill={"url(#"+id+")"} dot={false}/>
+  </AreaChart></ResponsiveContainer>);}
+
+function Chip({label,value,color}){const t=uT();return(
+  <div style={{background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:10,padding:"10px 16px",flex:"1 1 80px",minWidth:80}}>
+    <div style={{fontSize:9,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:3}}>{label}</div>
+    <div style={{fontSize:16,fontWeight:700,color:color||t.text,...mn}}>{value}</div>
+  </div>);}
+
+function PF({value,onChange}){const t=uT();return(
+  <div style={{display:"flex",gap:2,background:t.inputBg,borderRadius:8,padding:2,border:"1px solid "+t.cardBorder}}>
+    {["1W","1M","3M","ALL"].map(o=><button key={o} onClick={()=>onChange(o)} style={{padding:"4px 12px",borderRadius:6,border:"none",cursor:"pointer",fontSize:10,fontWeight:600,background:value===o?pC:"transparent",color:value===o?"#fff":t.textDim}}>{o}</button>)}
+  </div>);}
+
+function CMT({value,onChange}){const t=uT();return(
+  <div style={{display:"flex",gap:2,background:t.inputBg,borderRadius:8,padding:2,border:"1px solid "+t.cardBorder}}>
+    {["$","%"].map(o=><button key={o} onClick={()=>onChange(o)} style={{padding:"4px 10px",borderRadius:6,border:"none",cursor:"pointer",fontSize:11,fontWeight:700,background:value===o?gn:"transparent",color:value===o?"#fff":t.textDim,...mn}}>{o}</button>)}
+  </div>);}
+
+function Header({dm,setDm,data,ld}){const t=uT();return(
+  <div style={{background:t.cardSolid,borderBottom:"1px solid "+t.cardBorder,padding:"16px 28px",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12,position:"sticky",top:0,zIndex:50}}>
+    <div style={{display:"flex",alignItems:"center",gap:12}}>
+      <div style={{width:40,height:40,borderRadius:10,background:"linear-gradient(135deg,#3b82f6,#8b5cf6)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:19,fontWeight:800,color:"#fff",boxShadow:"0 0 20px rgba(59,130,246,0.3)"}}>S</div>
+      <div><h1 style={{margin:0,fontSize:22,fontWeight:800,color:t.text,...mn,letterSpacing:-.5}}>STEVE</h1><p style={{margin:0,fontSize:9,color:t.textDim,letterSpacing:2.5,textTransform:"uppercase"}}>Autonomous Trading System</p></div>
+    </div>
+    <div style={{display:"flex",alignItems:"center",gap:12}}>
+      <button onClick={()=>setDm(!dm)} style={{background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:20,padding:"5px 14px",cursor:"pointer",fontSize:13,color:t.textMuted,display:"flex",alignItems:"center",gap:6}}>{dm?"\u2600\uFE0F":"\uD83C\uDF19"}<span style={{fontSize:11,fontWeight:600}}>{dm?"Light":"Dark"}</span></button>
+      <div style={{display:"flex",alignItems:"center",gap:6,padding:"5px 14px",borderRadius:20,background:(ld?pu:data?gn:rd)+"10",border:"1px solid "+(ld?pu:data?gn:rd)+"30"}}>
+        <div style={{width:7,height:7,borderRadius:"50%",background:ld?pu:data?gn:rd,boxShadow:"0 0 8px "+(ld?pu:data?gn:rd),animation:"pulse 2s infinite"}}/><span style={{fontSize:11,color:ld?pu:data?gn:rd,fontWeight:600}}>{ld?"Updating...":data?"Live":"Offline"}</span>
+      </div>
+      <span style={{fontSize:10,color:t.textDim}}>{data&&data.lastUpdate?data.lastUpdate:"\u2014"}</span>
+    </div>
+  </div>);}
+
+function SumCards({data}){const t=uT();const ws=data&&data.workspaces?data.workspaces:{};
+  const lv=Object.values(ws).filter(w=>w.status==="live"),pp=Object.values(ws).filter(w=>w.status==="paper");
+  const lB=lv.reduce((s,w)=>s+(w.balance||0),0),lI=lv.reduce((s,w)=>s+(w.initialBalance||0),0);
+  const pBal=pp.reduce((s,w)=>s+(w.balance||0),0),pI=pp.reduce((s,w)=>s+(w.initialBalance||0),0);
+  const lPnl=pP(lB,lI),pPnl=pP(pBal,pI);const st=data&&data.strategy;
+  return(<div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:22}}>
+    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:16,flex:"1 1 260px",padding:"20px 24px",borderTop:"3px solid "+lC,backdropFilter:"blur(8px)"}}>
+      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}><span style={{fontSize:10,fontWeight:700,color:lC,textTransform:"uppercase",letterSpacing:2.5}}>Live Trading</span><Pill color={lC} bg={lC+"18"}>REAL $</Pill></div>
+      <div style={{fontSize:30,fontWeight:800,color:t.text,...mn,lineHeight:1}}>{fU(lB)}</div>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginTop:8}}><span style={{fontSize:14,fontWeight:700,color:pCol(lPnl),...mn,background:pBg(lPnl),padding:"2px 10px",borderRadius:6}}>{lPnl>=0?"+":""}{fm(lPnl)}%</span><span style={{fontSize:11,color:t.textDim}}>{fU(lB-lI)}</span></div>
+      <div style={{fontSize:11,color:t.textDim,marginTop:10}}>{lv.length} workspace · Aster DEX</div>
+    </div>
+    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:16,flex:"2 1 400px",padding:"20px 24px",borderTop:"3px solid "+pC,backdropFilter:"blur(8px)"}}>
+      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}><span style={{fontSize:10,fontWeight:700,color:pC,textTransform:"uppercase",letterSpacing:2.5}}>Paper Testing</span><Pill color={pC}>SIMULATED</Pill></div>
+      <div style={{fontSize:30,fontWeight:800,color:t.text,...mn,lineHeight:1}}>{fU(pBal)}</div>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginTop:8}}><span style={{fontSize:14,fontWeight:700,color:pCol(pPnl),...mn,background:pBg(pPnl),padding:"2px 10px",borderRadius:6}}>{pPnl>=0?"+":""}{fm(pPnl)}%</span><span style={{fontSize:11,color:t.textDim}}>{fU(pBal-pI)}</span></div>
+      {st&&<div style={{display:"flex",gap:8,marginTop:12,flexWrap:"wrap"}}>{pp.map(wo=>{const k=Object.keys(ws).find(k2=>ws[k2]===wo);const pi=st.pipelines&&st.pipelines[k];const rm=pi?dL(pi.paperStart):null;const pr=pi?dPr(pi.paperStart):0;return(<div key={k} style={{flex:"1 1 130px",background:t.inputBg,borderRadius:8,padding:"7px 11px",border:"1px solid "+t.cardBorder}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}><span style={{fontSize:11,fontWeight:700,color:t.textSub}}>{(wo.label||"").split("(")[0].trim()}</span><span style={{fontSize:10,fontWeight:700,...mn,color:rm===0?gn:rm!=null&&rm<=3?"#fbbf24":t.textMuted}}>{rm===0?"\u2713 READY":rm!=null?rm+"d remaining":"\u2014"}</span></div><div style={{height:3,borderRadius:2,background:t.cardBorder+"80",overflow:"hidden"}}><div style={{height:"100%",borderRadius:2,width:pr+"%",background:pr>=100?gn:"linear-gradient(90deg,#3b82f6,#8b5cf6)"}}/></div></div>);})}</div>}
+    </div>
+  </div>);}
+
+function LBTable({data,onSel}){const t=uT();const ws=data&&data.workspaces?data.workspaces:{};
+  const entries=Object.entries(ws).map(([k,w])=>({key:k,...w,pnl:pP(w.balance,w.initialBalance),stats:w.tradeStats})).sort((a,b)=>b.pnl-a.pnl);
+  return(<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"16px 20px",marginBottom:20,backdropFilter:"blur(8px)",overflowX:"auto"}}>
+    <div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2.5,marginBottom:12}}>Performance Overview</div>
+    <table style={{width:"100%",borderCollapse:"collapse",fontSize:12,minWidth:700}}><thead><tr style={{borderBottom:"2px solid "+t.cardBorder}}>
+      {["Workspace","Status","Balance","Return %","Total P&L","Win Rate","Best","Worst","Sharpe (BT)"].map(h=><th key={h} style={{textAlign:h==="Workspace"?"left":"right",padding:"8px 10px",fontSize:9,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1}}>{h}</th>)}
+    </tr></thead><tbody>
+      {entries.map(w=>{const isL=w.status==="live";return(<tr key={w.key} onClick={()=>onSel(w.key)} style={{borderBottom:"1px solid "+t.cardBorder+"40",cursor:"pointer",transition:"background 0.15s"}} onMouseEnter={e=>e.currentTarget.style.background=t.tableHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+        <td style={{padding:"10px",fontWeight:700,color:t.text}}><div style={{display:"flex",alignItems:"center",gap:8}}><span>{w.label}</span><span style={{padding:"1px 6px",borderRadius:4,fontSize:8,fontWeight:700,background:isL?lC:pC+"18",color:isL?"#fff":pC}}>{isL?"LIVE":"PAPER"}</span></div></td>
+        <td style={{padding:"10px",textAlign:"right",fontSize:10,color:t.textMuted}}>{w.modelType} · {w.timeframe}</td>
+        <td style={{padding:"10px",textAlign:"right",fontWeight:700,color:t.text,...mn}}>{fU(w.balance)}</td>
+        <td style={{padding:"10px",textAlign:"right",fontWeight:700,color:pCol(w.pnl),...mn}}><span style={{background:pBg(w.pnl),padding:"2px 8px",borderRadius:4}}>{w.pnl>=0?"+":""}{fm(w.pnl)}%</span></td>
+        <td style={{padding:"10px",textAlign:"right",...mn,color:w.stats?pCol(w.stats.totalPnlVal):t.textDim}}>{w.stats?fU(w.stats.totalPnlVal):"\u2014"}</td>
+        <td style={{padding:"10px",textAlign:"right",...mn,color:w.stats&&w.stats.winRate>50?gn:w.stats&&w.stats.winRate>0?t.textMuted:t.textDim}}>{w.stats?w.stats.winRate+"%":"\u2014"}</td>
+        <td style={{padding:"10px",textAlign:"right",...mn,color:gn}}>{w.stats?"+"+w.stats.bestPct+"%":"\u2014"}</td>
+        <td style={{padding:"10px",textAlign:"right",...mn,color:rd}}>{w.stats?w.stats.worstPct+"%":"\u2014"}</td>
+        <td style={{padding:"10px",textAlign:"right",...mn,fontWeight:600,color:w.backtest&&w.backtest.sharpe>1?gn:w.backtest&&w.backtest.sharpe?"#fbbf24":t.textDim}}>{w.backtest&&w.backtest.sharpe!=null?fm(w.backtest.sharpe,3):"\u2014"}</td>
+      </tr>);})}
+    </tbody></table>
+  </div>);}
+
+function WRow({wsKey,ws,onClick}){const t=uT();const pnl=pP(ws.balance,ws.initialBalance);const cS=ws.cashSignal!=null?ws.cashSignal:2;
+  const act=Object.entries(ws.positions||{}).filter(([,v])=>typeof v==="object"||v!==cS);const isL=ws.status==="live";const cd=(ws.equityCurve||[]).slice(-8);
+  return(<div onClick={onClick} style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"16px 22px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"space-between",gap:14,flexWrap:"wrap",borderLeft:"3px solid "+(isL?lC:pC),backdropFilter:"blur(8px)",transition:"all 0.2s"}} onMouseEnter={e=>{e.currentTarget.style.background=t.cardHover;e.currentTarget.style.boxShadow="0 4px 20px rgba(0,0,0,0.12)";}} onMouseLeave={e=>{e.currentTarget.style.background=t.card;e.currentTarget.style.boxShadow="none";}}>
+    <div style={{flex:"1 1 160px",minWidth:130}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:3}}><span style={{fontSize:15,fontWeight:700,color:t.text}}>{ws.label}</span><span style={{padding:"2px 8px",borderRadius:5,fontSize:9,fontWeight:700,background:isL?lC:pC+"18",color:isL?"#fff":pC}}>{isL?"LIVE":"PAPER"}</span></div>
+      <div style={{fontSize:11,color:t.textDim}}>{ws.modelType} · {ws.timeframe} · {tA(ws.lastInference)}</div>
+      {ws.candidateVersion&&<div style={{fontSize:10,color:t.textMuted,marginTop:3,display:"flex",alignItems:"center",gap:4}}><span style={{color:pu}}>{"\u25B6"}</span><span style={{...mn,fontSize:10}}>testing: {(ws.candidateVersion||"").slice(0,28)}</span></div>}
+    </div>
+    <div style={{display:"flex",alignItems:"center",gap:10,flex:"0 1 auto"}}>
+      <div style={{display:"flex",gap:3,flexWrap:"wrap",maxWidth:160}}>{act.slice(0,5).map(([tk])=><span key={tk} style={{padding:"2px 6px",borderRadius:4,fontSize:9,fontWeight:600,background:pC+"12",color:"#60a5fa"}}>{tk}</span>)}{act.length>5&&<span style={{fontSize:9,color:t.textDim}}>+{act.length-5}</span>}{act.length===0&&<span style={{fontSize:10,color:t.textDim,fontStyle:"italic"}}>all cash</span>}</div>
+      {cd.length>1&&<MC data={cd} pos={pnl>=0}/>}
+    </div>
+    <div style={{textAlign:"right",flex:"0 0 auto",minWidth:90}}><div style={{fontSize:17,fontWeight:700,color:t.text,...mn}}>{fU(ws.balance)}</div><span style={{fontSize:12,fontWeight:600,color:pCol(pnl),...mn,background:pBg(pnl),padding:"1px 8px",borderRadius:5,display:"inline-block"}}>{pnl>=0?"+":""}{fm(pnl)}%</span></div>
+    <span style={{color:t.textDim,fontSize:15}}>{"\u203A"}</span>
+  </div>);}
+
+function WDetail({wsKey,ws,strategy,onBack}){
+  const[per,setPer]=useState("ALL");const[cm,setCm]=useState("$");const t=uT();
+  const pnl=pP(ws.balance,ws.initialBalance);const cS=ws.cashSignal!=null?ws.cashSignal:2;
+  const act=Object.entries(ws.positions||{}).filter(([,v])=>typeof v==="object"||v!==cS);
+  const isL=ws.status==="live";const pi=strategy&&strategy.pipelines?strategy.pipelines[wsKey]:null;
+  const raw=fPer(ws.equityCurve,per);const cd=cm==="%"?toPct(raw):raw;const aM=ws.actionMap||{};const stats=ws.tradeStats;
+  return(<div>
+    <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:20}}>
+      <button onClick={onBack} style={{background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:8,padding:"7px 14px",cursor:"pointer",fontSize:13,fontWeight:600,color:t.textMuted}}>{"\u2190 Back"}</button>
+      <div style={{flex:1}}><div style={{display:"flex",alignItems:"center",gap:10}}><h2 style={{margin:0,fontSize:22,fontWeight:800,color:t.text}}>{ws.label}</h2><span style={{padding:"3px 12px",borderRadius:6,fontSize:9,fontWeight:700,background:isL?lC:pC,color:"#fff"}}>{isL?"LIVE":"PAPER"}</span></div><p style={{margin:"2px 0 0",fontSize:11,color:t.textDim}}>{ws.broker} · Inference {tA(ws.lastInference)}</p></div>
+    </div>
+    <div style={{display:"flex",gap:10,flexWrap:"wrap",marginBottom:16}}>
+      <Chip label="Balance" value={fU(ws.balance)}/><Chip label="P&L" value={(pnl>=0?"+":"")+fm(pnl)+"%"} color={pCol(pnl)}/><Chip label="Cash" value={fU(ws.freeCash)}/>
+      {stats&&<><Chip label="Win Rate" value={stats.winRate+"%"} color={stats.winRate>50?gn:"#fbbf24"}/><Chip label="Total P&L" value={fU(stats.totalPnlVal)} color={pCol(stats.totalPnlVal)}/><Chip label="Best" value={"+"+stats.bestPct+"%"} color={gn}/><Chip label="Worst" value={stats.worstPct+"%"} color={rd}/></>}
+      {!stats&&ws.backtest&&ws.backtest.sharpe!=null&&<><Chip label="Sharpe" value={fm(ws.backtest.sharpe,3)} color={ws.backtest.sharpe>1?gn:"#fbbf24"}/><Chip label="Return" value={fm(ws.backtest.returnPct,1)+"%"} color={gn}/><Chip label="Max DD" value={fm(ws.backtest.maxDD,1)+"%"} color={ws.backtest.maxDD<30?gn:rd}/></>}
+    </div>
+    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"16px 20px",marginBottom:14,backdropFilter:"blur(8px)"}}>
+      <div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2,marginBottom:8}}>Model Details</div>
+      <div style={{display:"flex",gap:20,flexWrap:"wrap",fontSize:13,color:t.text}}>
+        <span><span style={{color:t.textDim}}>Running: </span><span style={{fontWeight:600,...mn}}>{ws.modelVersion}</span></span>
+        <span><span style={{color:t.textDim}}>Type: </span><span style={{fontWeight:600}}>{ws.modelType}</span></span>
+        <span><span style={{color:t.textDim}}>TF: </span><span style={{fontWeight:600}}>{ws.timeframe}</span></span>
+      </div>
+      {ws.candidateVersion&&<div style={{marginTop:10,padding:"10px 14px",background:t.inputBg,borderRadius:10,border:"1px solid "+pu+"30"}}>
+        <span style={{color:pu,fontWeight:700,fontSize:11}}>{"\u25B6"} CANDIDATE UNDER TEST</span>
+        <div style={{...mn,fontWeight:600,color:t.text,fontSize:13,marginTop:4}}>{ws.candidateVersion}</div>
+        {pi&&<div style={{fontSize:11,color:t.textMuted,marginTop:4,display:"flex",gap:14,flexWrap:"wrap"}}><span>Status: <span style={{color:(sM[pi.status]||{}).c,fontWeight:600}}>{(sM[pi.status]||{}).l}</span></span><span>{dL(pi.paperStart)}d remaining</span><span>{pi.failures>0?pi.failures+" failures":"clean run"}</span></div>}
+      </div>}
+    </div>
+    <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:14}}>
+      <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,flex:"1 1 400px",padding:"16px 20px",backdropFilter:"blur(8px)"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10,gap:8,flexWrap:"wrap"}}><span style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2}}>Equity Curve</span><div style={{display:"flex",gap:6}}><CMT value={cm} onChange={setCm}/><PF value={per} onChange={setPer}/></div></div>
+        <div style={{height:200}}>{cd&&cd.length>1?<ResponsiveContainer width="100%" height="100%"><AreaChart data={cd}>
+          <defs><linearGradient id={"dg"+wsKey} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={pnl>=0?gn:rd} stopOpacity={.2}/><stop offset="100%" stopColor={pnl>=0?gn:rd} stopOpacity={0}/></linearGradient></defs>
+          <XAxis dataKey="d" tick={{fill:t.textDim,fontSize:10}} axisLine={false} tickLine={false}/><YAxis domain={["auto","auto"]} tick={{fill:t.textDim,fontSize:10}} axisLine={false} tickLine={false} width={55} tickFormatter={v=>cm==="%"?(v>=0?"+":"")+v.toFixed(1)+"%":(v>=1000?"$"+(v/1000).toFixed(1)+"k":"$"+v.toFixed(0))}/><Tooltip contentStyle={{background:t.tooltipBg,border:"1px solid "+t.cardBorder,borderRadius:8,fontSize:12}} formatter={v=>[cm==="%"?(v>=0?"+":"")+Number(v).toFixed(2)+"%":fU(v),cm==="%"?"Return":"Balance"]}/>
+          <Area type="monotone" dataKey="v" stroke={pnl>=0?gn:rd} strokeWidth={2} fill={"url(#dg"+wsKey+")"} dot={false}/>
+        </AreaChart></ResponsiveContainer>:<div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100%",color:t.textDim,fontSize:13}}>No equity data yet</div>}</div>
+      </div>
+      <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,flex:"1 1 280px",padding:"16px 20px",backdropFilter:"blur(8px)"}}>
+        <span style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2}}>Positions ({act.length})</span>
+        {act.length===0&&<div style={{fontSize:13,color:t.textDim,fontStyle:"italic",padding:"28px 0",textAlign:"center"}}>All CASH</div>}
+        <div style={{display:"flex",flexDirection:"column",gap:5,marginTop:8,maxHeight:200,overflowY:"auto"}}>{act.map(([tk,val])=>{
+          if(typeof val==="object"){const tp=val.entry_price?((val.current_price-val.entry_price)/val.entry_price*100):(val.entry?((val.current-val.entry)/val.entry*100):0);return(<div key={tk} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 12px",background:t.chipBg,borderRadius:8,border:"1px solid "+t.cardBorder}}><div><span style={{fontWeight:700,color:t.text,fontSize:14}}>{tk}</span><span style={{fontSize:10,color:t.textDim,marginLeft:6}}>{val.leverage}</span></div><div style={{textAlign:"right"}}><div style={{fontSize:12,...mn,color:t.textMuted}}>{"$"+fm(val.current_price||val.current,0)}</div><div style={{fontSize:12,fontWeight:600,color:pCol(tp),...mn}}>{(tp>=0?"+":"")+fm(tp)+"%"}</div></div></div>);}
+          const sl=aM[String(val)]||"sig="+val;const iL=val>cS;return(<div key={tk} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"6px 12px",background:t.chipBg,borderRadius:8,border:"1px solid "+t.cardBorder}}><span style={{fontWeight:700,color:t.text,fontSize:13}}>{tk}</span><span style={{fontSize:10,fontWeight:600,color:iL?gn:rd,background:iL?gn+"12":rd+"12",padding:"2px 8px",borderRadius:4}}>{sl}</span></div>);})}</div>
+      </div>
+    </div>
+    {ws.trades&&ws.trades.length>0&&<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"16px 20px",backdropFilter:"blur(8px)"}}>
+      <span style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2}}>Recent Trades</span>
+      <div style={{overflowX:"auto",marginTop:8}}><table style={{width:"100%",borderCollapse:"collapse",fontSize:12}}><thead><tr style={{borderBottom:"1px solid "+t.cardBorder}}>{["Time","Ticker","Signal","Entry","Current","P&L"].map(h=><th key={h} style={{textAlign:"left",padding:"6px 10px",fontSize:9,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1}}>{h}</th>)}</tr></thead><tbody>
+        {ws.trades.map((tr,i)=><tr key={i} style={{borderBottom:"1px solid "+t.cardBorder+"40",transition:"background 0.15s"}} onMouseEnter={e=>e.currentTarget.style.background=t.cardHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+          <td style={{padding:"7px 10px",color:t.textDim,...mn,fontSize:11}}>{tr.time}</td><td style={{padding:"7px 10px",fontWeight:700,color:t.text}}>{tr.ticker}</td>
+          <td style={{padding:"7px 10px"}}><span style={{padding:"2px 7px",borderRadius:4,fontSize:10,fontWeight:600,background:String(tr.signal).includes("LONG")?gn+"12":String(tr.signal).includes("SHORT")?rd+"12":t.textDim+"15",color:String(tr.signal).includes("LONG")?gn:String(tr.signal).includes("SHORT")?rd:t.textDim}}>{tr.signal}</span></td>
+          <td style={{padding:"7px 10px",...mn,color:t.textMuted}}>{tr.entry>0?"$"+fm(tr.entry):"\u2014"}</td><td style={{padding:"7px 10px",...mn,color:t.textMuted}}>{tr.current>0?"$"+fm(tr.current):"\u2014"}</td>
+          <td style={{padding:"7px 10px",...mn,fontWeight:600,color:pCol(tr.pnl)}}>{tr.pnl!==0?(tr.pnl>=0?"+":"")+fm(tr.pnl)+"%":"\u2014"}</td>
+        </tr>)}
+      </tbody></table></div>
+    </div>}
+  </div>);}
+
+function StratPanel({strategy}){const t=uT();if(!strategy)return null;return(
+  <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:16,padding:"20px 24px",marginBottom:18,backdropFilter:"blur(8px)"}}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}><div><h2 style={{margin:0,fontSize:16,fontWeight:800,color:t.text}}>STEVE STRATEGY</h2><p style={{margin:"2px 0 0",fontSize:11,color:t.textDim}}>Haiku Decision Engine · {strategy.totalExperiments} experiments · {strategy.schedule}</p></div></div>
+    <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>{Object.entries(strategy.pipelines||{}).map(([k,p])=>{const st=sM[p.status]||{c:"#94a3b8",l:p.status};const rm=dL(p.paperStart);return(
+      <div key={k} style={{flex:"1 1 160px",background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:12,padding:"12px 16px"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}><span style={{fontSize:13,fontWeight:700,color:t.text}}>{k==="crypto_btc"?"BTC":k==="crypto_multi"?"Multi":"Stocks"}</span><span style={{padding:"2px 8px",borderRadius:10,fontSize:9,fontWeight:700,background:st.c+"15",color:st.c,border:"1px solid "+st.c+"30"}}>{st.l}</span></div>
+        <div style={{fontSize:10,color:t.textDim,...mn,marginBottom:5,wordBreak:"break-all"}}>{p.experiment}</div>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:t.textMuted}}><span>{rm!=null?rm+"d remaining":"\u2014"}</span><span>{p.failures>0?p.failures+" fail":"clean"}</span></div>
+      </div>);})}</div>
+  </div>);}
+
+function App(){
+  const[dm,setDm]=useState(true);const[data,setData]=useState(null);const[ld,setLd]=useState(true);const[sel,setSel]=useState(null);
+  const t=dm?themes.dark:themes.light;
+  const doFetch=useCallback(async()=>{try{setLd(true);const r=await fetch(DATA_URL+"?t="+Date.now());if(r.ok)setData(await r.json());}catch(e){console.error(e);}finally{setLd(false);}},[]);
+  useEffect(()=>{doFetch();const i=setInterval(doFetch,REFRESH_MS);return()=>clearInterval(i);},[doFetch]);
+  const ws=data&&data.workspaces?data.workspaces:{};
+  return(<TC.Provider value={t}><div style={{minHeight:"100vh",background:t.bg,color:t.text,fontFamily:"'Inter',-apple-system,sans-serif",transition:"background 0.3s,color 0.3s"}}>
+    <Header dm={dm} setDm={setDm} data={data} ld={ld}/>
+    <div style={{padding:"22px 28px",maxWidth:1200,margin:"0 auto"}}>
+      {!data&&ld&&<div style={{textAlign:"center",padding:"60px 0",color:t.textMuted}}><div style={{fontSize:32,marginBottom:12}}>{"\u26A1"}</div><div style={{fontSize:14,fontWeight:600}}>Connecting to STEVE...</div></div>}
+      {!data&&!ld&&<div style={{textAlign:"center",padding:"60px 0",color:rd}}><div style={{fontSize:32,marginBottom:12}}>{"\u26A0\uFE0F"}</div><div style={{fontSize:14,fontWeight:600}}>Cannot load data</div><button onClick={doFetch} style={{marginTop:12,padding:"8px 20px",borderRadius:8,border:"1px solid "+t.cardBorder,background:t.chipBg,color:t.text,cursor:"pointer",fontSize:13,fontWeight:600}}>Retry</button></div>}
+      {data&&sel&&ws[sel]?<WDetail wsKey={sel} ws={ws[sel]} strategy={data.strategy} onBack={()=>setSel(null)}/>:data?<>
+        <SumCards data={data}/><LBTable data={data} onSel={setSel}/>
+        <p style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2.5,marginBottom:12}}>Workspaces</p>
+        <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:20}}>{Object.entries(ws).map(([k,wo])=><WRow key={k} wsKey={k} ws={wo} onClick={()=>setSel(k)}/>)}</div>
+        <StratPanel strategy={data.strategy}/>
+        <div style={{textAlign:"center",padding:"16px 0 6px",fontSize:10,color:t.textDim}}>STEVE v6.0 — Live data · GitHub Pages · Python 3.13 · SB3 · PPO/DQN</div>
+      </>:null}
+    </div>
+  </div></TC.Provider>);}
+
+ReactDOM.render(React.createElement(App), document.getElementById("root"));
+</script>
+</body>
+</html>

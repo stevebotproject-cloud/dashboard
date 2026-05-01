@@ -1,0 +1,34 @@
+name: Update STEVE Data
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch STEVE status
+        run: |
+          curl -s --max-time 15 \
+            "${{ secrets.STEVE_API_URL }}" \
+            -o data/steve_status.json || echo '{"error":"fetch failed","lastUpdate":"'$(date -u +%Y-%m-%d\ %H:%M\ UTC)'"}' > data/steve_status.json
+
+      - name: Commit if changed
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.name "STEVE Bot"
+          git config user.email "steve.bot.project@gmail.com"
+          git add data/steve_status.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "data: update $(date -u +%Y-%m-%dT%H:%M)"
+            git push
+          fi
