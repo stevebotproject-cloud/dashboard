@@ -34,8 +34,8 @@ const dL=(s)=>{if(!s)return null;return Math.max(0,Math.ceil((new Date(new Date(
 const dPr=(s)=>{if(!s)return 0;return Math.min(100,((new Date()-new Date(s))/86400000/14)*100);};
 const tA=(d)=>{if(!d)return"N/A";const h=Math.floor((new Date()-new Date(d.replace(" ","T")+(d.includes("T")?"":"Z")))/3600000);return h<1?"now":h<24?h+"h ago":Math.floor(h/24)+"d ago";};
 const sM={searching:{c:"#fbbf24",l:"Searching"},waiting_results:{c:"#a78bfa",l:"Waiting"},candidate_ready:{c:gn,l:"Ready"},paper_testing:{c:pC,l:"Testing"},paper_complete:{c:gn,l:"Complete"}};
-const fPer=(data,p)=>{if(!data||p==="ALL")return data||[const n=p==="1W"?7:p==="1M"?16:30;return data.slice(-Math.min(n,data.length));};
-const toPct=(data)=>{if(!data||!data.length)return[const b=data[0].v;if(!b)return data;return data.map(p=>({d:p.d,v:((p.v-b)/b*100)}));};
+const fPer=(data,p)=>{if(!data||p==="ALL")return data||[];const n=p==="1W"?7:p==="1M"?16:30;return data.slice(-Math.min(n,data.length));};
+const toPct=(data)=>{if(!data||!data.length)return[];const b=data[0].v;if(!b)return data;return data.map(p=>({d:p.d,v:((p.v-b)/b*100)}));};
 
 const Pill=({children,color,bg})=>(<span style={{padding:"3px 10px",borderRadius:6,fontSize:9,fontWeight:700,letterSpacing:.5,background:bg||color+"18",color:color||"#94a3b8",border:"1px solid "+(color||"#1e293b")+"30"}}>{children}</span>);
 
