@@ -9,14 +9,15 @@
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,sans-serif}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.7/Recharts.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel">
+<script type="text/babel" data-type="module">
 const {useState,useEffect,useCallback,createContext,useContext}=React;
-const {AreaChart,Area,XAxis,YAxis,Tooltip,ResponsiveContainer}=Recharts;
+const {AreaChart,Area,XAxis,YAxis,Tooltip,ResponsiveContainer}=window.Recharts;
 
 const DATA_URL="data/steve_status.json";
 const REFRESH_MS=300000;
@@ -39,7 +40,9 @@ const sM={searching:{c:"#fbbf24",l:"Searching"},waiting_results:{c:"#a78bfa",l:"
 const fPer=(data,p)=>{if(!data||p==="ALL")return data||[];const n=p==="1W"?7:p==="1M"?16:30;return data.slice(-Math.min(n,data.length));};
 const toPct=(data)=>{if(!data||!data.length)return[];const b=data[0].v;if(!b)return data;return data.map(p=>({d:p.d,v:((p.v-b)/b*100)}));};
 
-const Pill=({children,color,bg})=>React.createElement("span",{style:{padding:"3px 10px",borderRadius:6,fontSize:9,fontWeight:700,letterSpacing:.5,background:bg||color+"18",color:color||"#94a3b8",border:"1px solid "+(color||"#1e293b")+"30"}},children);
+const Pill=({children,color,bg})=>(
+  <span style={{padding:"3px 10px",borderRadius:6,fontSize:9,fontWeight:700,letterSpacing:.5,background:bg||color+"18",color:color||"#94a3b8",border:"1px solid "+(color||"#1e293b")+"30"}}>{children}</span>
+);
 
 function MC({data,pos,h=44,w=110}){const id="mc"+Math.random().toString(36).slice(2,6);return(
   <ResponsiveContainer width={w} height={h}><AreaChart data={data||[]}>
