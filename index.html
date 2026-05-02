@@ -101,25 +101,37 @@ function SumCards({data}){const t=uT();const ws=data&&data.workspaces?data.works
     </div>
   </div>);}
 
-function LBTable({data,onSel}){const t=uT();const ws=data&&data.workspaces?data.workspaces:{};
-  const entries=Object.entries(ws).map(([k,w])=>({key:k,...w,pnl:pP(w.balance,w.initialBalance),stats:w.tradeStats})).sort((a,b)=>b.pnl-a.pnl);
-  return(<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"16px 20px",marginBottom:20,backdropFilter:"blur(8px)",overflowX:"auto"}}>
-    <div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2.5,marginBottom:12}}>Performance Overview</div>
-    <table style={{width:"100%",borderCollapse:"collapse",fontSize:12,minWidth:700}}><thead><tr style={{borderBottom:"2px solid "+t.cardBorder}}>
-      {["Workspace","Status","Balance","Return %","Total P&L","Win Rate","Best","Worst","Sharpe (BT)"].map(h=><th key={h} style={{textAlign:h==="Workspace"?"left":"right",padding:"8px 10px",fontSize:9,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1}}>{h}</th>)}
+function PerfTable({entries,title,accent,onSel}){const t=uT();
+  if(!entries.length) return null;
+  return(<div style={{marginBottom:16}}>
+    <div style={{fontSize:10,fontWeight:700,color:accent,textTransform:"uppercase",letterSpacing:2.5,marginBottom:8}}>{title}</div>
+    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"12px 16px",backdropFilter:"blur(8px)",overflowX:"auto"}}>
+    <table style={{width:"100%",borderCollapse:"collapse",fontSize:12,minWidth:650}}><thead><tr style={{borderBottom:"2px solid "+t.cardBorder}}>
+      {["Workspace","Model","Balance","Return %","Total P&L","Win Rate","Best","Worst","Sharpe"].map(h=><th key={h} style={{textAlign:h==="Workspace"?"left":"right",padding:"7px 8px",fontSize:9,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1}}>{h}</th>)}
     </tr></thead><tbody>
-      {entries.map(w=>{const isL=w.status==="live";return(<tr key={w.key} onClick={()=>onSel(w.key)} style={{borderBottom:"1px solid "+t.cardBorder+"40",cursor:"pointer",transition:"background 0.15s"}} onMouseEnter={e=>e.currentTarget.style.background=t.tableHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
-        <td style={{padding:"10px",fontWeight:700,color:t.text}}><div style={{display:"flex",alignItems:"center",gap:8}}><span>{w.label}</span><span style={{padding:"1px 6px",borderRadius:4,fontSize:8,fontWeight:700,background:isL?lC:pC+"18",color:isL?"#fff":pC}}>{isL?"LIVE":"PAPER"}</span></div></td>
-        <td style={{padding:"10px",textAlign:"right",fontSize:10,color:t.textMuted}}>{w.modelType} · {w.timeframe}</td>
-        <td style={{padding:"10px",textAlign:"right",fontWeight:700,color:t.text,...mn}}>{fU(w.balance)}</td>
-        <td style={{padding:"10px",textAlign:"right",fontWeight:700,color:pCol(w.pnl),...mn}}><span style={{background:pBg(w.pnl),padding:"2px 8px",borderRadius:4}}>{w.pnl>=0?"+":""}{fm(w.pnl)}%</span></td>
-        <td style={{padding:"10px",textAlign:"right",...mn,color:w.stats?pCol(w.stats.totalPnlVal):t.textDim}}>{w.stats?fU(w.stats.totalPnlVal):"\u2014"}</td>
-        <td style={{padding:"10px",textAlign:"right",...mn,color:w.stats&&w.stats.winRate>50?gn:w.stats&&w.stats.winRate>0?t.textMuted:t.textDim}}>{w.stats?w.stats.winRate+"%":"\u2014"}</td>
-        <td style={{padding:"10px",textAlign:"right",...mn,color:gn}}>{w.stats?"+"+w.stats.bestPct+"%":"\u2014"}</td>
-        <td style={{padding:"10px",textAlign:"right",...mn,color:rd}}>{w.stats?w.stats.worstPct+"%":"\u2014"}</td>
-        <td style={{padding:"10px",textAlign:"right",...mn,fontWeight:600,color:w.backtest&&w.backtest.sharpe>1?gn:w.backtest&&w.backtest.sharpe?"#fbbf24":t.textDim}}>{w.backtest&&w.backtest.sharpe!=null?fm(w.backtest.sharpe,3):"\u2014"}</td>
-      </tr>);})}
+      {entries.map(w=><tr key={w.key} onClick={()=>onSel(w.key)} style={{borderBottom:"1px solid "+t.cardBorder+"40",cursor:"pointer",transition:"background 0.15s"}} onMouseEnter={e=>e.currentTarget.style.background=t.tableHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+        <td style={{padding:"8px",fontWeight:700,color:t.text,fontSize:13}}>{w.label}</td>
+        <td style={{padding:"8px",textAlign:"right",fontSize:10,color:t.textMuted,...mn}}>{w.modelType} · {w.timeframe}</td>
+        <td style={{padding:"8px",textAlign:"right",fontWeight:700,color:t.text,...mn}}>{fU(w.balance)}</td>
+        <td style={{padding:"8px",textAlign:"right",fontWeight:700,color:pCol(w.pnl),...mn}}><span style={{background:pBg(w.pnl),padding:"2px 8px",borderRadius:4}}>{w.pnl>=0?"+":""}{fm(w.pnl)}%</span></td>
+        <td style={{padding:"8px",textAlign:"right",...mn,color:w.stats?pCol(w.stats.totalPnlVal):t.textDim}}>{w.stats?fU(w.stats.totalPnlVal):"\u2014"}</td>
+        <td style={{padding:"8px",textAlign:"right",...mn,color:w.stats&&w.stats.winRate>50?gn:w.stats&&w.stats.winRate>0?t.textMuted:t.textDim}}>{w.stats?w.stats.winRate+"%":"\u2014"}</td>
+        <td style={{padding:"8px",textAlign:"right",...mn,color:gn}}>{w.stats?"+"+w.stats.bestPct+"%":"\u2014"}</td>
+        <td style={{padding:"8px",textAlign:"right",...mn,color:rd}}>{w.stats?w.stats.worstPct+"%":"\u2014"}</td>
+        <td style={{padding:"8px",textAlign:"right",...mn,fontWeight:600,color:w.backtest&&w.backtest.sharpe>1?gn:w.backtest&&w.backtest.sharpe?"#fbbf24":t.textDim}}>{w.backtest&&w.backtest.sharpe!=null?fm(w.backtest.sharpe,3):"\u2014"}</td>
+      </tr>)}
     </tbody></table>
+    </div>
+  </div>);}
+
+function LBTables({data,onSel}){
+  const ws=data&&data.workspaces?data.workspaces:{};
+  const all=Object.entries(ws).map(([k,w])=>({key:k,...w,pnl:pP(w.balance,w.initialBalance),stats:w.tradeStats}));
+  const liveE=all.filter(w=>w.status==="live").sort((a,b)=>b.pnl-a.pnl);
+  const paperE=all.filter(w=>w.status==="paper").sort((a,b)=>b.pnl-a.pnl);
+  return(<div style={{marginBottom:20}}>
+    <PerfTable entries={liveE} title={"\u26A1 Live Performance"} accent={lC} onSel={onSel}/>
+    <PerfTable entries={paperE} title={"\uD83D\uDCCA Paper Performance"} accent={pC} onSel={onSel}/>
   </div>);}
 
 function WRow({wsKey,ws,onClick}){const t=uT();const pnl=pP(ws.balance,ws.initialBalance);const cS=ws.cashSignal!=null?ws.cashSignal:2;
@@ -220,7 +232,8 @@ function App(){
       {!data&&ld&&<div style={{textAlign:"center",padding:"60px 0",color:t.textMuted}}><div style={{fontSize:32,marginBottom:12}}>{"\u26A1"}</div><div style={{fontSize:14,fontWeight:600}}>Connecting to STEVE...</div></div>}
       {!data&&!ld&&<div style={{textAlign:"center",padding:"60px 0",color:rd}}><div style={{fontSize:32,marginBottom:12}}>{"\u26A0\uFE0F"}</div><div style={{fontSize:14,fontWeight:600}}>Cannot load data</div><button onClick={doFetch} style={{marginTop:12,padding:"8px 20px",borderRadius:8,border:"1px solid "+t.cardBorder,background:t.chipBg,color:t.text,cursor:"pointer",fontSize:13,fontWeight:600}}>Retry</button></div>}
       {data&&sel&&ws[sel]?<WDetail wsKey={sel} ws={ws[sel]} strategy={data.strategy} onBack={()=>setSel(null)}/>:data?<>
-        <SumCards data={data}/><LBTable data={data} onSel={setSel}/>
+        <SumCards data={data}/>
+        <LBTables data={data} onSel={setSel}/>
         <p style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:2.5,marginBottom:12}}>Workspaces</p>
         <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:20}}>{Object.entries(ws).map(([k,wo])=><WRow key={k} wsKey={k} ws={wo} onClick={()=>setSel(k)}/>)}</div>
         <StratPanel strategy={data.strategy}/>
