@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-02 21:45 UTC",
+  "lastUpdate": "2026-05-02 22:08 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -415,13 +415,34 @@
           "v": 10000.0
         },
         {
-          "d": "Now",
-          "v": 9995.71
+          "d": "May 2",
+          "v": 10000.0
+        },
+        {
+          "d": "May 3",
+          "v": 10000.0
         }
       ],
       "tradeCount": 0,
       "tradeStats": null,
-      "trades": [],
+      "trades": [
+        {
+          "time": "2026-05-03 00:00:08",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-05-02 23:55:27",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
       "candidateVersion": "btc_1d_v9_sharpe_stability"
     },
     "crypto_multi": {
@@ -437,7 +458,7 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 9759.2,
+      "balance": 9759.12,
       "freeCash": 8002.03,
       "lastInference": "2026-05-02 20:30:06",
       "positions": {},
@@ -462,13 +483,22 @@
           "v": 10000.0
         },
         {
-          "d": "Now",
-          "v": 9759.2
+          "d": "May 2",
+          "v": 10000.0
         }
       ],
       "tradeCount": 0,
       "tradeStats": null,
-      "trades": [],
+      "trades": [
+        {
+          "time": "2026-05-02 23:55:25",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
       "candidateVersion": "4h_v8_sharpe_peak_consolidation_funding_boost"
     }
   },
