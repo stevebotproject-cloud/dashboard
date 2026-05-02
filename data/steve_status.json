@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-02 16:41 UTC",
+  "lastUpdate": "2026-05-02 19:09 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -16,14 +16,14 @@
       },
       "cashSignal": 2,
       "balance": 518.39332916,
-      "freeCash": 367.83169273,
-      "lastInference": "2026-05-02 17:10:08",
+      "freeCash": 367.84720905,
+      "lastInference": "2026-05-02 19:10:08",
       "positions": {
         "BTC": {
           "entry_price": 75214.5,
-          "current_price": 78469.63586594,
+          "current_price": 78358.3,
           "shares": 0.002,
-          "alloc": 183.91,
+          "alloc": 183.92,
           "leverage": "1.0x",
           "sl": 71453.77,
           "tp": 82735.95
@@ -40,72 +40,108 @@
       },
       "equityCurve": [
         {
+          "d": "Start",
+          "v": 518.65
+        },
+        {
           "d": "Apr 20",
-          "v": 553.02
+          "v": 520.28
         },
         {
           "d": "Apr 21",
-          "v": 552.21
+          "v": 519.44
         },
         {
           "d": "Apr 22",
-          "v": 559.58
+          "v": 526.77
         },
         {
           "d": "Apr 23",
-          "v": 558.03
+          "v": 525.15
         },
         {
           "d": "Apr 24",
-          "v": 557.34
+          "v": 524.44
         },
         {
           "d": "Apr 25",
-          "v": 557.09
+          "v": 524.18
         },
         {
           "d": "Apr 26",
-          "v": 558.76
+          "v": 525.84
         },
         {
           "d": "Apr 27",
-          "v": 555.64
+          "v": 522.7
         },
         {
           "d": "Apr 28",
-          "v": 554.16
+          "v": 521.23
         },
         {
           "d": "Apr 29",
-          "v": 552.99
+          "v": 520.06
         },
         {
           "d": "Apr 30",
-          "v": 554.22
+          "v": 521.28
         },
         {
           "d": "May 1",
-          "v": 558.35
+          "v": 525.37
         },
         {
           "d": "May 2",
-          "v": 559.7
+          "v": 526.34
         }
       ],
       "tradeCount": 0,
       "tradeStats": {
-        "totalRows": 589,
-        "tradesWithPnl": 588,
+        "totalRows": 593,
+        "tradesWithPnl": 592,
         "winRate": 98.6,
         "bestPct": 5.31,
         "worstPct": -0.52,
-        "avgWinPct": 2.68,
+        "avgWinPct": 2.69,
         "avgLossPct": -0.18,
         "biggestWinVal": 7.98,
         "biggestLossVal": -1.17,
         "totalPnlVal": -0.26
       },
       "trades": [
+        {
+          "time": "2026-05-02 20:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 75214.5,
+          "current": 78358.3,
+          "pnl": 4.18
+        },
+        {
+          "time": "2026-05-02 19:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 75214.5,
+          "current": 78394.54814946,
+          "pnl": 4.23
+        },
+        {
+          "time": "2026-05-02 19:10:11",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 75214.5,
+          "current": 78421.0,
+          "pnl": 4.26
+        },
+        {
+          "time": "2026-05-02 19:10:04",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 75214.5,
+          "current": 78409.4,
+          "pnl": 4.25
+        },
         {
           "time": "2026-05-02 18:30:03",
           "ticker": "BTC",
@@ -153,38 +189,6 @@
           "entry": 75214.5,
           "current": 78266.87951757,
           "pnl": 4.06
-        },
-        {
-          "time": "2026-05-02 15:10:10",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 75214.5,
-          "current": 78284.9,
-          "pnl": 4.08
-        },
-        {
-          "time": "2026-05-02 15:10:04",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 75214.5,
-          "current": 78269.3,
-          "pnl": 4.06
-        },
-        {
-          "time": "2026-05-02 14:30:03",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 75214.5,
-          "current": 78202.2,
-          "pnl": 3.97
-        },
-        {
-          "time": "2026-05-02 13:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 75214.5,
-          "current": 78170.42457681,
-          "pnl": 3.93
         }
       ]
     },
@@ -256,24 +260,28 @@
       },
       "equityCurve": [
         {
+          "d": "Start",
+          "v": 10000.0
+        },
+        {
           "d": "Apr 27",
-          "v": 9861.18
+          "v": 9968.74
         },
         {
           "d": "Apr 28",
-          "v": 9872.96
+          "v": 9970.43
         },
         {
           "d": "Apr 29",
-          "v": 9741.12
+          "v": 9906.56
         },
         {
           "d": "Apr 30",
-          "v": 10089.13
+          "v": 10080.42
         },
         {
           "d": "May 1",
-          "v": 10111.08
+          "v": 10084.76
         }
       ],
       "tradeCount": 0,
@@ -432,13 +440,7 @@
       "balance": 9754.04,
       "freeCash": 9754.04,
       "lastInference": "2026-05-02 16:30:06",
-      "positions": {
-        "BTC": 0,
-        "ETH": 2,
-        "AVAX": 2,
-        "LINK": 2,
-        "DOGE": 0
-      },
+      "positions": {},
       "lastPrices": {
         "BTC": 78493.5703125,
         "ETH": 2308.52001953125,
