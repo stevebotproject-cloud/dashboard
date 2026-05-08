@@ -59,12 +59,16 @@ function PerfOverview({ws}){const t=uT();
   const pnl=ws.balance-(ws.initialBalance||0);
   const pnlPctVal=pP(ws.balance,ws.initialBalance);
   let modelDays=null,modelDaysRemaining=null,baseline=ws.initialBalance,modelPnl=pnl,modelPnlPct=pnlPctVal,progress=0;
-  if(ws.modelCreatedDate){
-    const dep=new Date(ws.modelCreatedDate);
+  // Preferisci deployedAt+baselineAtDeploy (precisi) se presenti, altrimenti fallback a modelCreatedDate+equityCurve
+  const depDateStr=ws.deployedAt||ws.modelCreatedDate;
+  if(depDateStr){
+    const dep=new Date(depDateStr.replace(" ","T"));
     modelDays=Math.max(0,Math.floor((new Date()-dep)/86400000));
     modelDaysRemaining=Math.max(0,14-modelDays);
     progress=Math.min(100,(modelDays/14)*100);
-    if(ws.equityCurve&&ws.equityCurve.length){
+    if(ws.baselineAtDeploy!=null){
+      baseline=ws.baselineAtDeploy;
+    }else if(ws.equityCurve&&ws.equityCurve.length&&ws.modelCreatedDate){
       const pt=ws.equityCurve.find(p=>p.d&&p.d>=ws.modelCreatedDate);
       if(pt&&pt.v)baseline=pt.v;
     }
@@ -82,7 +86,7 @@ function PerfOverview({ws}){const t=uT();
     </div>}
     <div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:16}}>
       {card("Saldo Attuale",fU(ws.balance))}
-      {isPaper?card("Model Return ($)",(modelPnl>=0?"+":"")+fU(modelPnl),pCol(modelPnl),"da deploy "+(ws.modelCreatedDate||"")):card("PNL Totale ($)",(pnl>=0?"+":"")+fU(pnl),pCol(pnl))}
+      {isPaper?card("Model Return ($)",(modelPnl>=0?"+":"")+fU(modelPnl),pCol(modelPnl),"da deploy "+(ws.deployedAt||ws.modelCreatedDate||"")):card("PNL Totale ($)",(pnl>=0?"+":"")+fU(pnl),pCol(pnl))}
       {isPaper?card("Model Return (%)",(modelPnlPct>=0?"+":"")+fm(modelPnlPct)+"%",pCol(modelPnlPct)):card("PNL Totale (%)",(pnlPctVal>=0?"+":"")+fm(pnlPctVal)+"%",pCol(pnlPctVal))}
       {isPaper&&modelDays!=null?card("Test Day",modelDays+" / 14",progress>=100?gn:t.text):card("Saldo Iniziale",fU(ws.initialBalance),t.textDim)}
       {isPaper&&modelDaysRemaining!=null?card("Days Remaining",modelDaysRemaining,modelDaysRemaining===0?gn:modelDaysRemaining<=3?"#fbbf24":t.text):(ws.tradingDays?card("Trading Days",ws.tradingDays,t.text,ws.tradingStartDate||""):null)}
