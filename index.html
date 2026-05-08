@@ -54,14 +54,40 @@ function BtcTicker(){const t=uT();const[d,setD]=useState(null);const[err,setErr]
   </div>);
 }
 
-function PerfOverview({ws}){const t=uT();const pnl=ws.balance-(ws.initialBalance||0);const pnlPctVal=pP(ws.balance,ws.initialBalance);
-  return(<div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:16}}>
-    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>Saldo Attuale</div><div style={{fontSize:26,fontWeight:800,color:t.text,...mn}}>{fU(ws.balance)}</div></div>
-    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>PNL Totale ($)</div><div style={{fontSize:26,fontWeight:800,color:pCol(pnl),...mn}}>{pnl>=0?"+":""}{fU(pnl)}</div></div>
-    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>PNL Totale (%)</div><div style={{fontSize:26,fontWeight:800,color:pCol(pnlPctVal),...mn}}>{pnlPctVal>=0?"+":""}{fm(pnlPctVal)}%</div></div>
-    <div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>Saldo Iniziale</div><div style={{fontSize:26,fontWeight:800,color:t.textDim,...mn}}>{fU(ws.initialBalance)}</div></div>
-    {ws.tradingDays?<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>Trading Days</div><div style={{fontSize:26,fontWeight:800,color:t.text,...mn}}>{ws.tradingDays}</div><div style={{fontSize:10,color:t.textDim,marginTop:4}}>{ws.tradingStartDate||""}</div></div>:null}
-  </div>);}
+function PerfOverview({ws}){const t=uT();
+  const isPaper=ws.status==="paper";
+  const pnl=ws.balance-(ws.initialBalance||0);
+  const pnlPctVal=pP(ws.balance,ws.initialBalance);
+  let modelDays=null,modelDaysRemaining=null,baseline=ws.initialBalance,modelPnl=pnl,modelPnlPct=pnlPctVal,progress=0;
+  if(ws.modelCreatedDate){
+    const dep=new Date(ws.modelCreatedDate);
+    modelDays=Math.max(0,Math.floor((new Date()-dep)/86400000));
+    modelDaysRemaining=Math.max(0,14-modelDays);
+    progress=Math.min(100,(modelDays/14)*100);
+    if(ws.equityCurve&&ws.equityCurve.length){
+      const pt=ws.equityCurve.find(p=>p.d&&p.d>=ws.modelCreatedDate);
+      if(pt&&pt.v)baseline=pt.v;
+    }
+    modelPnl=ws.balance-baseline;
+    modelPnlPct=baseline?((ws.balance-baseline)/baseline*100):0;
+  }
+  const card=(label,value,color,sub)=>(<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"18px 22px",flex:"1 1 130px",backdropFilter:"blur(8px)",textAlign:"center"}}><div style={{fontSize:10,fontWeight:700,color:t.textDim,textTransform:"uppercase",letterSpacing:1.5,marginBottom:8}}>{label}</div><div style={{fontSize:26,fontWeight:800,color:color||t.text,...mn}}>{value}</div>{sub?<div style={{fontSize:10,color:t.textDim,marginTop:4}}>{sub}</div>:null}</div>);
+  return(<>
+    {isPaper&&modelDays!=null&&<div style={{background:t.card,border:"1px solid "+t.cardBorder,borderRadius:14,padding:"14px 20px",marginBottom:14,backdropFilter:"blur(8px)"}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8,flexWrap:"wrap",gap:8}}>
+        <div><span style={{fontSize:10,fontWeight:700,color:pC,textTransform:"uppercase",letterSpacing:2}}>Paper Test</span><span style={{...mn,fontSize:12,color:t.textSub,marginLeft:8}}>{ws.modelVersion}</span></div>
+        <div style={{...mn,fontSize:12,fontWeight:700,color:modelDaysRemaining===0?gn:t.text}}>{modelDaysRemaining===0?"TEST COMPLETE":"Day "+modelDays+" / 14"}</div>
+      </div>
+      <div style={{height:6,borderRadius:3,background:t.cardBorder+"60",overflow:"hidden"}}><div style={{height:"100%",width:progress+"%",background:progress>=100?gn:"linear-gradient(90deg,#3b82f6,#8b5cf6)",transition:"width 0.5s"}}/></div>
+    </div>}
+    <div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:16}}>
+      {card("Saldo Attuale",fU(ws.balance))}
+      {isPaper?card("Model Return ($)",(modelPnl>=0?"+":"")+fU(modelPnl),pCol(modelPnl),"da deploy "+(ws.modelCreatedDate||"")):card("PNL Totale ($)",(pnl>=0?"+":"")+fU(pnl),pCol(pnl))}
+      {isPaper?card("Model Return (%)",(modelPnlPct>=0?"+":"")+fm(modelPnlPct)+"%",pCol(modelPnlPct)):card("PNL Totale (%)",(pnlPctVal>=0?"+":"")+fm(pnlPctVal)+"%",pCol(pnlPctVal))}
+      {isPaper&&modelDays!=null?card("Test Day",modelDays+" / 14",progress>=100?gn:t.text):card("Saldo Iniziale",fU(ws.initialBalance),t.textDim)}
+      {isPaper&&modelDaysRemaining!=null?card("Days Remaining",modelDaysRemaining,modelDaysRemaining===0?gn:modelDaysRemaining<=3?"#fbbf24":t.text):(ws.tradingDays?card("Trading Days",ws.tradingDays,t.text,ws.tradingStartDate||""):null)}
+    </div>
+  </>);}
 
 function Header({dm,setDm,data,ld,onRefresh}){const t=uT();return(<div style={{background:t.cardSolid,borderBottom:"1px solid "+t.cardBorder,padding:"16px 28px",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12,position:"sticky",top:0,zIndex:50}}><div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:40,height:40,borderRadius:10,background:"linear-gradient(135deg,#3b82f6,#8b5cf6)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:19,fontWeight:800,color:"#fff",boxShadow:"0 0 20px rgba(59,130,246,0.3)"}}>S</div><div><h1 style={{margin:0,fontSize:22,fontWeight:800,color:t.text,...mn,letterSpacing:-.5}}>STEVE</h1><p style={{margin:0,fontSize:9,color:t.textDim,letterSpacing:2.5,textTransform:"uppercase"}}>Autonomous Trading System</p></div></div><div style={{display:"flex",alignItems:"center",gap:12}}><BtcTicker/><button onClick={onRefresh} style={{background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:20,padding:"5px 14px",cursor:"pointer",fontSize:13,color:t.textMuted,display:"flex",alignItems:"center",gap:4}}>{"\uD83D\uDD04"}<span style={{fontSize:11,fontWeight:600}}>Refresh</span></button><button onClick={()=>setDm(!dm)} style={{background:t.chipBg,border:"1px solid "+t.cardBorder,borderRadius:20,padding:"5px 14px",cursor:"pointer",fontSize:13,color:t.textMuted,display:"flex",alignItems:"center",gap:6}}>{dm?"\u2600\uFE0F":"\uD83C\uDF19"}<span style={{fontSize:11,fontWeight:600}}>{dm?"Light":"Dark"}</span></button><div style={{display:"flex",alignItems:"center",gap:6,padding:"5px 14px",borderRadius:20,background:(ld?pu:data?gn:rd)+"10",border:"1px solid "+(ld?pu:data?gn:rd)+"30"}}><div style={{width:7,height:7,borderRadius:"50%",background:ld?pu:data?gn:rd,boxShadow:"0 0 8px "+(ld?pu:data?gn:rd),animation:"pulse 2s infinite"}}/><span style={{fontSize:11,color:ld?pu:data?gn:rd,fontWeight:600}}>{ld?"Updating...":data?"Live":"Offline"}</span></div><span style={{fontSize:10,color:t.textDim}}>{data&&data.lastUpdate?data.lastUpdate:"\u2014"}</span></div></div>);}
 
