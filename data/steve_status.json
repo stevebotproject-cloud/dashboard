@@ -1,1 +1,1448 @@
-{"error":"fetch failed","lastUpdate":"2026-06-03 00:00 UTC"}
+{
+  "lastUpdate": "2026-06-03 05:07 UTC",
+  "watchdogStatus": "OK",
+  "workspaces": {
+    "crypto_live": {
+      "label": "Crypto BTC",
+      "broker": "Aster DEX",
+      "status": "live",
+      "initialBalance": 518.65,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 464.1,
+      "freeCash": 129.14695914,
+      "lastInference": "2026-06-03 05:10:10",
+      "positions": {
+        "BTC": {
+          "entry_price": 66449.9,
+          "current_price": 66551.6,
+          "shares": 0.005,
+          "alloc": 96.89,
+          "leverage": "1.5x",
+          "sl": 63127.4,
+          "tp": 73094.89
+        }
+      },
+      "lastPrices": {},
+      "modelVersion": "legacy",
+      "modelType": "PPO",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": null,
+        "returnPct": null,
+        "maxDD": null
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 518.65
+        },
+        {
+          "d": "Apr 20",
+          "v": 520.28
+        },
+        {
+          "d": "Apr 21",
+          "v": 519.44
+        },
+        {
+          "d": "Apr 22",
+          "v": 526.77
+        },
+        {
+          "d": "Apr 23",
+          "v": 525.15
+        },
+        {
+          "d": "Apr 24",
+          "v": 524.44
+        },
+        {
+          "d": "Apr 25",
+          "v": 524.18
+        },
+        {
+          "d": "Apr 26",
+          "v": 525.84
+        },
+        {
+          "d": "Apr 27",
+          "v": 522.7
+        },
+        {
+          "d": "Apr 28",
+          "v": 521.23
+        },
+        {
+          "d": "Apr 29",
+          "v": 520.06
+        },
+        {
+          "d": "Apr 30",
+          "v": 521.28
+        },
+        {
+          "d": "May 1",
+          "v": 525.37
+        },
+        {
+          "d": "May 2",
+          "v": 526.57
+        },
+        {
+          "d": "May 3",
+          "v": 527.62
+        },
+        {
+          "d": "May 4",
+          "v": 530.71
+        },
+        {
+          "d": "May 5",
+          "v": 533.85
+        },
+        {
+          "d": "May 6",
+          "v": 533.79
+        },
+        {
+          "d": "May 7",
+          "v": 530.05
+        },
+        {
+          "d": "May 8",
+          "v": 530.73
+        },
+        {
+          "d": "May 9",
+          "v": 532.21
+        },
+        {
+          "d": "May 10",
+          "v": 532.27
+        },
+        {
+          "d": "May 11",
+          "v": 534.22
+        },
+        {
+          "d": "May 12",
+          "v": 531.86
+        },
+        {
+          "d": "May 13",
+          "v": 528.81
+        },
+        {
+          "d": "May 14",
+          "v": 533.72
+        },
+        {
+          "d": "May 15",
+          "v": 526.08
+        },
+        {
+          "d": "May 16",
+          "v": 522.61
+        },
+        {
+          "d": "May 17",
+          "v": 522.83
+        },
+        {
+          "d": "May 18",
+          "v": 520.96
+        },
+        {
+          "d": "May 19",
+          "v": 520.94
+        },
+        {
+          "d": "May 20",
+          "v": 521.75
+        },
+        {
+          "d": "May 21",
+          "v": 521.99
+        },
+        {
+          "d": "May 22",
+          "v": 519.67
+        },
+        {
+          "d": "May 23",
+          "v": 520.64
+        },
+        {
+          "d": "May 24",
+          "v": 520.32
+        },
+        {
+          "d": "May 25",
+          "v": 521.42
+        },
+        {
+          "d": "May 26",
+          "v": 519.71
+        },
+        {
+          "d": "May 27",
+          "v": 518.45
+        },
+        {
+          "d": "May 28",
+          "v": 516.61
+        },
+        {
+          "d": "May 29",
+          "v": 516.69
+        },
+        {
+          "d": "May 30",
+          "v": 518.6
+        },
+        {
+          "d": "May 31",
+          "v": 518.14
+        },
+        {
+          "d": "Jun 1",
+          "v": 514.86
+        },
+        {
+          "d": "Jun 2",
+          "v": 515.73
+        },
+        {
+          "d": "Jun 3",
+          "v": 518.8
+        }
+      ],
+      "tradeCount": 4,
+      "openPositions": 1,
+      "tradingStartDate": "2026-04-20",
+      "tradingDays": 43,
+      "tradeStats": {
+        "totalRows": 2034,
+        "tradesWithPnl": 2033,
+        "winRate": 87.9,
+        "bestPct": 9.87,
+        "worstPct": -5.47,
+        "avgWinPct": 4.08,
+        "avgLossPct": -1.7,
+        "biggestWinVal": 16.3,
+        "biggestLossVal": -20.22,
+        "totalPnlVal": -54.55
+      },
+      "trades": [
+        {
+          "time": "2026-06-03 06:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66551.6,
+          "pnl": 0.15
+        },
+        {
+          "time": "2026-06-03 05:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66124.6,
+          "pnl": -0.49
+        },
+        {
+          "time": "2026-06-03 05:10:13",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66417.65772102,
+          "pnl": -0.05
+        },
+        {
+          "time": "2026-06-03 05:10:04",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66394.6,
+          "pnl": -0.08
+        },
+        {
+          "time": "2026-06-03 04:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66629.5,
+          "pnl": 0.27
+        },
+        {
+          "time": "2026-06-03 03:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66994.7813587,
+          "pnl": 0.82
+        },
+        {
+          "time": "2026-06-03 03:10:10",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66813.58062319,
+          "pnl": 0.55
+        },
+        {
+          "time": "2026-06-03 03:10:04",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66809.8,
+          "pnl": 0.54
+        },
+        {
+          "time": "2026-06-03 02:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66735.17624638,
+          "pnl": 0.43
+        },
+        {
+          "time": "2026-06-03 01:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 66449.9,
+          "current": 66403.62435508,
+          "pnl": -0.07
+        }
+      ]
+    },
+    "stocks": {
+      "label": "Stocks (Dow 20)",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "CASH",
+        "1": "LONG 1x",
+        "2": "LONG 1.5x"
+      },
+      "cashSignal": 0,
+      "balance": 9906.4,
+      "freeCash": 9906.4,
+      "lastInference": "2026-06-02 14:00:14",
+      "positions": {
+        "AAPL": 0,
+        "AMGN": 0,
+        "AXP": 0,
+        "BA": 0,
+        "CAT": 0,
+        "CRM": 0,
+        "CSCO": 0,
+        "CVX": 0,
+        "DIS": 0,
+        "GS": 0,
+        "HD": 0,
+        "HON": 0,
+        "IBM": 0,
+        "JNJ": 0,
+        "JPM": 0,
+        "KO": 0,
+        "MCD": 0,
+        "MMM": 0,
+        "MSFT": 0,
+        "WMT": 0
+      },
+      "lastPrices": {
+        "AAPL": 315.2,
+        "AMGN": 328.26,
+        "AXP": 310.97,
+        "BA": 217.7,
+        "CAT": 909.81,
+        "CRM": 200.84,
+        "CSCO": 128.0,
+        "CVX": 187.55,
+        "DIS": 101.41,
+        "GS": 1064.58,
+        "HD": 311.52,
+        "HON": 235.23,
+        "IBM": 329.23,
+        "JNJ": 222.89,
+        "JPM": 300.96,
+        "KO": 78.41,
+        "MCD": 276.36,
+        "MMM": 152.9,
+        "MSFT": 441.31,
+        "WMT": 113.06
+      },
+      "modelVersion": "traditional_1d_v8_dd_control",
+      "modelCreatedDate": "2026-04-25",
+      "deployedAt": "2026-04-25 12:00:00",
+      "baselineAtDeploy": 10000.0,
+      "modelType": "DQN",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 1.8834883184070652,
+        "returnPct": 77.96888848034196,
+        "maxDD": 11.69362127464361
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 10000.0
+        },
+        {
+          "d": "Apr 27",
+          "v": 9968.74
+        },
+        {
+          "d": "Apr 28",
+          "v": 9970.43
+        },
+        {
+          "d": "Apr 29",
+          "v": 9906.56
+        },
+        {
+          "d": "Apr 30",
+          "v": 10080.42
+        },
+        {
+          "d": "May 1",
+          "v": 10084.76
+        },
+        {
+          "d": "May 4",
+          "v": 9960.43
+        },
+        {
+          "d": "May 5",
+          "v": 10000.55
+        },
+        {
+          "d": "May 6",
+          "v": 10096.15
+        },
+        {
+          "d": "May 7",
+          "v": 10037.58
+        },
+        {
+          "d": "May 8",
+          "v": 10018.9
+        },
+        {
+          "d": "May 11",
+          "v": 10009.57
+        },
+        {
+          "d": "May 12",
+          "v": 10000.0
+        },
+        {
+          "d": "May 13",
+          "v": 10000.0
+        },
+        {
+          "d": "May 14",
+          "v": 10000.0
+        },
+        {
+          "d": "May 15",
+          "v": 10006.87
+        },
+        {
+          "d": "May 16",
+          "v": 10000.0
+        },
+        {
+          "d": "May 17",
+          "v": 10000.0
+        },
+        {
+          "d": "May 18",
+          "v": 9995.49
+        },
+        {
+          "d": "May 19",
+          "v": 10000.48
+        },
+        {
+          "d": "May 20",
+          "v": 10000.0
+        },
+        {
+          "d": "May 21",
+          "v": 10000.0
+        },
+        {
+          "d": "May 22",
+          "v": 10000.0
+        },
+        {
+          "d": "May 23",
+          "v": 10000.0
+        },
+        {
+          "d": "May 24",
+          "v": 10000.0
+        },
+        {
+          "d": "May 25",
+          "v": 10000.0
+        },
+        {
+          "d": "May 26",
+          "v": 10000.0
+        },
+        {
+          "d": "May 27",
+          "v": 10000.0
+        },
+        {
+          "d": "May 28",
+          "v": 10000.0
+        },
+        {
+          "d": "May 29",
+          "v": 10000.0
+        },
+        {
+          "d": "May 30",
+          "v": 10000.0
+        },
+        {
+          "d": "May 31",
+          "v": 10000.0
+        },
+        {
+          "d": "Jun 1",
+          "v": 10000.0
+        },
+        {
+          "d": "Jun 2",
+          "v": 10000.0
+        },
+        {
+          "d": "Jun 3",
+          "v": 10000.0
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 16,
+      "tradingStartDate": "2026-04-27",
+      "tradingDays": 36,
+      "tradeStats": {
+        "totalRows": 1105,
+        "tradesWithPnl": 503,
+        "winRate": 43.5,
+        "bestPct": 11.66,
+        "worstPct": -7.37,
+        "avgWinPct": 2.6,
+        "avgLossPct": -1.67,
+        "biggestWinVal": 78.5,
+        "biggestLossVal": -51.49,
+        "totalPnlVal": -93.6
+      },
+      "trades": [
+        {
+          "time": "2026-06-03 06:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 05:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 04:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 03:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 02:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 01:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 00:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-02 23:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-02 22:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-02 22:00:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "traditional_1d_v22_v8_sharpe_maximize_ppo_boost"
+    },
+    "crypto_btc": {
+      "label": "Crypto BTC",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 8464.33,
+      "freeCash": 724.89,
+      "lastInference": "2026-06-03 00:00:12",
+      "positions": {
+        "BTC": 1
+      },
+      "lastPrices": {
+        "BTC": 66241.6094
+      },
+      "modelVersion": "btc_1d_v11_dd_sharp_balance",
+      "modelCreatedDate": "2026-05-08",
+      "deployedAt": "2026-05-12 10:00:16",
+      "baselineAtDeploy": 9995.71,
+      "modelType": "DQN",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 1.684134405176096,
+        "returnPct": 225.5192310661455,
+        "maxDD": 31.96777418707229
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 10000.0
+        },
+        {
+          "d": "May 2",
+          "v": 10000.0
+        },
+        {
+          "d": "May 3",
+          "v": 10000.0
+        },
+        {
+          "d": "May 4",
+          "v": 10000.0
+        },
+        {
+          "d": "May 5",
+          "v": 10000.0
+        },
+        {
+          "d": "May 6",
+          "v": 10000.0
+        },
+        {
+          "d": "May 7",
+          "v": 10000.0
+        },
+        {
+          "d": "May 8",
+          "v": 10000.0
+        },
+        {
+          "d": "May 9",
+          "v": 10000.0
+        },
+        {
+          "d": "May 10",
+          "v": 10000.0
+        },
+        {
+          "d": "May 11",
+          "v": 10000.0
+        },
+        {
+          "d": "May 12",
+          "v": 10000.0
+        },
+        {
+          "d": "May 13",
+          "v": 10000.0
+        },
+        {
+          "d": "May 14",
+          "v": 10000.0
+        },
+        {
+          "d": "May 15",
+          "v": 9989.36
+        },
+        {
+          "d": "May 16",
+          "v": 9989.46
+        },
+        {
+          "d": "May 17",
+          "v": 10000.0
+        },
+        {
+          "d": "May 18",
+          "v": 9999.97
+        },
+        {
+          "d": "May 19",
+          "v": 9998.14
+        },
+        {
+          "d": "May 20",
+          "v": 10006.62
+        },
+        {
+          "d": "May 21",
+          "v": 10005.95
+        },
+        {
+          "d": "May 22",
+          "v": 9988.31
+        },
+        {
+          "d": "May 23",
+          "v": 9990.07
+        },
+        {
+          "d": "May 24",
+          "v": 9997.95
+        },
+        {
+          "d": "May 25",
+          "v": 10003.47
+        },
+        {
+          "d": "May 26",
+          "v": 9989.73
+        },
+        {
+          "d": "May 27",
+          "v": 9980.18
+        },
+        {
+          "d": "May 28",
+          "v": 9965.13
+        },
+        {
+          "d": "May 29",
+          "v": 9966.14
+        },
+        {
+          "d": "May 30",
+          "v": 9969.99
+        },
+        {
+          "d": "May 31",
+          "v": 9965.65
+        },
+        {
+          "d": "Jun 1",
+          "v": 9946.29
+        },
+        {
+          "d": "Jun 2",
+          "v": 9941.87
+        },
+        {
+          "d": "Jun 3",
+          "v": 10000.0
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 1,
+      "tradingStartDate": "2026-05-02",
+      "tradingDays": 31,
+      "tradeStats": {
+        "totalRows": 1087,
+        "tradesWithPnl": 192,
+        "winRate": 24.5,
+        "bestPct": 1.4,
+        "worstPct": -7.82,
+        "avgWinPct": 0.53,
+        "avgLossPct": -2.52,
+        "biggestWinVal": 125.92,
+        "biggestLossVal": -702.54,
+        "totalPnlVal": -1535.67
+      },
+      "trades": [
+        {
+          "time": "2026-06-03 06:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 06:00:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 06:00:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 05:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 04:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 04:00:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 04:00:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 03:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 02:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 02:00:27",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "btc_1d_v20_dd_sharp_recovery"
+    },
+    "crypto_multi": {
+      "label": "Crypto Multi (5)",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 9090.36,
+      "freeCash": 6344.95,
+      "lastInference": "2026-06-03 04:30:07",
+      "positions": {
+        "BTC": 3,
+        "ETH": 3,
+        "AVAX": 4,
+        "LINK": 3,
+        "DOGE": 3
+      },
+      "lastPrices": {
+        "BTC": 66463.0234375,
+        "ETH": 1842.1600341796875,
+        "AVAX": 8.119999885559082,
+        "LINK": 8.319999694824219,
+        "DOGE": 0.09233999997377396
+      },
+      "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
+      "modelCreatedDate": "2026-05-18",
+      "deployedAt": "2026-05-18 13:42:35",
+      "baselineAtDeploy": 9499.68,
+      "modelType": "PPO",
+      "timeframe": "4h",
+      "backtest": {
+        "sharpe": 3.8902264470814227,
+        "returnPct": 107.87332637620368,
+        "maxDD": 14.563854518720868
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 10000.0
+        },
+        {
+          "d": "May 2",
+          "v": 10000.0
+        },
+        {
+          "d": "May 3",
+          "v": 9996.55
+        },
+        {
+          "d": "May 4",
+          "v": 9990.32
+        },
+        {
+          "d": "May 5",
+          "v": 10035.1
+        },
+        {
+          "d": "May 6",
+          "v": 10039.73
+        },
+        {
+          "d": "May 7",
+          "v": 9976.8
+        },
+        {
+          "d": "May 8",
+          "v": 9973.62
+        },
+        {
+          "d": "May 9",
+          "v": 10000.0
+        },
+        {
+          "d": "May 10",
+          "v": 10000.0
+        },
+        {
+          "d": "May 11",
+          "v": 10000.0
+        },
+        {
+          "d": "May 12",
+          "v": 10002.9
+        },
+        {
+          "d": "May 13",
+          "v": 10002.15
+        },
+        {
+          "d": "May 14",
+          "v": 9996.62
+        },
+        {
+          "d": "May 15",
+          "v": 9963.99
+        },
+        {
+          "d": "May 16",
+          "v": 9971.83
+        },
+        {
+          "d": "May 17",
+          "v": 9983.63
+        },
+        {
+          "d": "May 18",
+          "v": 9979.89
+        },
+        {
+          "d": "May 19",
+          "v": 9957.15
+        },
+        {
+          "d": "May 20",
+          "v": 10004.74
+        },
+        {
+          "d": "May 21",
+          "v": 10015.05
+        },
+        {
+          "d": "May 22",
+          "v": 9984.42
+        },
+        {
+          "d": "May 23",
+          "v": 10007.66
+        },
+        {
+          "d": "May 24",
+          "v": 10008.0
+        },
+        {
+          "d": "May 25",
+          "v": 9994.5
+        },
+        {
+          "d": "May 26",
+          "v": 9982.41
+        },
+        {
+          "d": "May 27",
+          "v": 9976.26
+        },
+        {
+          "d": "May 28",
+          "v": 9950.84
+        },
+        {
+          "d": "May 29",
+          "v": 9932.96
+        },
+        {
+          "d": "May 30",
+          "v": 9984.78
+        },
+        {
+          "d": "May 31",
+          "v": 9981.64
+        },
+        {
+          "d": "Jun 1",
+          "v": 9998.62
+        },
+        {
+          "d": "Jun 2",
+          "v": 9904.94
+        },
+        {
+          "d": "Jun 3",
+          "v": 9879.37
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 5,
+      "tradingStartDate": "2026-05-02",
+      "tradingDays": 31,
+      "tradeStats": {
+        "totalRows": 1332,
+        "tradesWithPnl": 677,
+        "winRate": 26.6,
+        "bestPct": 6.62,
+        "worstPct": -8.1,
+        "avgWinPct": 0.94,
+        "avgLossPct": -1.57,
+        "biggestWinVal": 46.56,
+        "biggestLossVal": -60.82,
+        "totalPnlVal": -909.64
+      },
+      "trades": [
+        {
+          "time": "2026-06-03 06:30:14",
+          "ticker": "DOGE",
+          "signal": "LONG 1x",
+          "entry": 0.09897027,
+          "current": 0.090957,
+          "pnl": -8.1
+        },
+        {
+          "time": "2026-06-03 06:30:14",
+          "ticker": "LINK",
+          "signal": "LONG 1x",
+          "entry": 8.3337,
+          "current": 8.32492594,
+          "pnl": -0.11
+        },
+        {
+          "time": "2026-06-03 06:30:14",
+          "ticker": "AVAX",
+          "signal": "LONG 2x",
+          "entry": 8.720184283,
+          "current": 8.061,
+          "pnl": -7.56
+        },
+        {
+          "time": "2026-06-03 06:30:14",
+          "ticker": "ETH",
+          "signal": "LONG 1x",
+          "entry": 1926.009021951,
+          "current": 1837.68,
+          "pnl": -4.59
+        },
+        {
+          "time": "2026-06-03 06:30:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 05:45:05",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-06-03 04:30:10",
+          "ticker": "DOGE",
+          "signal": "LONG 1x",
+          "entry": 0.099116775,
+          "current": 0.09309,
+          "pnl": -6.08
+        },
+        {
+          "time": "2026-06-03 04:30:10",
+          "ticker": "AVAX",
+          "signal": "LONG 2x",
+          "entry": 8.720184283,
+          "current": 8.1523,
+          "pnl": -6.51
+        },
+        {
+          "time": "2026-06-03 04:30:10",
+          "ticker": "ETH",
+          "signal": "LONG 1x",
+          "entry": 1926.009021951,
+          "current": 1852.472,
+          "pnl": -3.82
+        },
+        {
+          "time": "2026-06-03 04:30:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "4h_v19_sharpe_peak_ppo_recovery_selective_features"
+    },
+    "crypto_multi_hl": {
+      "label": "Crypto Multi HL",
+      "broker": "Hyperliquid Testnet",
+      "status": "paper",
+      "initialBalance": 999.0,
+      "actionMap": {
+        "0": "SHORT 20x",
+        "1": "SHORT 10x",
+        "2": "SHORT 5x",
+        "3": "SHORT 3x",
+        "4": "SHORT 2x",
+        "5": "SHORT 1x",
+        "6": "CASH",
+        "7": "LONG 1x",
+        "8": "LONG 2x",
+        "9": "LONG 3x",
+        "10": "LONG 5x",
+        "11": "LONG 7x",
+        "12": "LONG 10x",
+        "13": "LONG 15x",
+        "14": "LONG 20x"
+      },
+      "cashSignal": 6,
+      "balance": 1055.49,
+      "freeCash": 547.21,
+      "lastInference": "2026-06-03 00:45:13",
+      "positions": {
+        "BTC": 3,
+        "ETH": 0,
+        "SOL": 8,
+        "AVAX": 13,
+        "DOGE": 9
+      },
+      "lastPrices": {
+        "BTC": 66421.5,
+        "ETH": 1873.7,
+        "SOL": 73.2395,
+        "AVAX": 8.1503,
+        "DOGE": 0.092493
+      },
+      "modelVersion": "hl_v2_6_sharpe_reward_shift",
+      "modelCreatedDate": "2026-05-18",
+      "deployedAt": "2026-05-18 16:45:08",
+      "baselineAtDeploy": 988.92,
+      "modelType": "PPO",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 0.366,
+        "returnPct": 4.24,
+        "maxDD": 32.18
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 999.0
+        },
+        {
+          "d": "May 17",
+          "v": 999.0
+        },
+        {
+          "d": "May 18",
+          "v": 993.29
+        },
+        {
+          "d": "May 19",
+          "v": 1008.66
+        },
+        {
+          "d": "May 20",
+          "v": 994.97
+        },
+        {
+          "d": "May 21",
+          "v": 993.85
+        },
+        {
+          "d": "May 22",
+          "v": 1005.65
+        },
+        {
+          "d": "May 23",
+          "v": 988.31
+        },
+        {
+          "d": "May 24",
+          "v": 989.47
+        },
+        {
+          "d": "May 25",
+          "v": 1005.19
+        },
+        {
+          "d": "May 26",
+          "v": 1028.01
+        },
+        {
+          "d": "May 27",
+          "v": 1022.24
+        },
+        {
+          "d": "May 28",
+          "v": 1047.71
+        },
+        {
+          "d": "May 29",
+          "v": 1060.8
+        },
+        {
+          "d": "May 30",
+          "v": 1049.08
+        },
+        {
+          "d": "May 31",
+          "v": 1062.59
+        },
+        {
+          "d": "Jun 1",
+          "v": 1055.19
+        },
+        {
+          "d": "Jun 2",
+          "v": 1141.67
+        },
+        {
+          "d": "Jun 3",
+          "v": 1044.64
+        }
+      ],
+      "tradeCount": 15,
+      "openPositions": 5,
+      "tradingStartDate": "2026-05-17",
+      "tradingDays": 16,
+      "tradeStats": {
+        "totalRows": 889,
+        "tradesWithPnl": 885,
+        "winRate": 60.5,
+        "bestPct": 10.99,
+        "worstPct": -8.14,
+        "avgWinPct": 2.72,
+        "avgLossPct": -1.31,
+        "biggestWinVal": 60.01,
+        "biggestLossVal": -29.39,
+        "totalPnlVal": 56.49
+      },
+      "trades": [
+        {
+          "time": "2026-06-03 06:45:25",
+          "ticker": "DOGE",
+          "signal": "LONG 3x",
+          "entry": 0.10058,
+          "current": 0.09239,
+          "pnl": -8.14
+        },
+        {
+          "time": "2026-06-03 06:45:25",
+          "ticker": "AVAX",
+          "signal": "LONG 15x",
+          "entry": 8.2303,
+          "current": 8.1398,
+          "pnl": -1.1
+        },
+        {
+          "time": "2026-06-03 06:45:25",
+          "ticker": "SOL",
+          "signal": "LONG 2x",
+          "entry": 78.0306,
+          "current": 73.4435,
+          "pnl": -5.88
+        },
+        {
+          "time": "2026-06-03 06:45:25",
+          "ticker": "ETH",
+          "signal": "SHORT 20x",
+          "entry": 2098.0,
+          "current": 1870.95,
+          "pnl": 10.82
+        },
+        {
+          "time": "2026-06-03 06:45:25",
+          "ticker": "BTC",
+          "signal": "SHORT 3x",
+          "entry": 72167.7,
+          "current": 66412.5,
+          "pnl": 7.97
+        },
+        {
+          "time": "2026-06-03 04:45:28",
+          "ticker": "DOGE",
+          "signal": "LONG 3x",
+          "entry": 0.10058,
+          "current": 0.092501,
+          "pnl": -8.03
+        },
+        {
+          "time": "2026-06-03 04:45:28",
+          "ticker": "AVAX",
+          "signal": "LONG 15x",
+          "entry": 8.2336,
+          "current": 8.1703,
+          "pnl": -0.77
+        },
+        {
+          "time": "2026-06-03 04:45:28",
+          "ticker": "SOL",
+          "signal": "LONG 2x",
+          "entry": 78.0306,
+          "current": 74.687,
+          "pnl": -4.29
+        },
+        {
+          "time": "2026-06-03 04:45:28",
+          "ticker": "ETH",
+          "signal": "SHORT 20x",
+          "entry": 2098.0,
+          "current": 1928.8,
+          "pnl": 8.06
+        },
+        {
+          "time": "2026-06-03 04:45:28",
+          "ticker": "BTC",
+          "signal": "SHORT 3x",
+          "entry": 72167.7,
+          "current": 66750.5,
+          "pnl": 7.51
+        }
+      ],
+      "candidateVersion": "hl_v2_13_micro_trade_filter_leverage_tune"
+    }
+  },
+  "strategy": {
+    "totalExperiments": 62,
+    "lastRun": "2026-06-02T10:00:25.488172",
+    "schedule": "Tue/Fri 08:00 UTC",
+    "pipelines": {
+      "crypto_btc": {
+        "status": "waiting_results",
+        "experiment": "btc_1d_v20_dd_sharp_recovery",
+        "paperStart": "",
+        "failures": 2
+      },
+      "crypto_multi": {
+        "status": "searching",
+        "experiment": "4h_v19_sharpe_peak_ppo_recovery_selective_features",
+        "paperStart": "",
+        "failures": 2
+      },
+      "stocks": {
+        "status": "waiting_results",
+        "experiment": "traditional_1d_v22_v8_sharpe_maximize_ppo_boost",
+        "paperStart": "",
+        "failures": 1
+      },
+      "crypto_multi_hl": {
+        "status": "paper_complete",
+        "experiment": "hl_v2_13_micro_trade_filter_leverage_tune",
+        "paperStart": "2026-05-17",
+        "failures": 0
+      }
+    }
+  }
+}
