@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-15 11:19 UTC",
+  "lastUpdate": "2026-08-15 11:41 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -16,12 +16,12 @@
       },
       "cashSignal": 2,
       "balance": 436.88,
-      "freeCash": 121.72666882,
+      "freeCash": 121.75536152,
       "lastInference": "2026-08-15 13:10:09",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 63009.23960507,
+          "current_price": 63009.7,
           "shares": 0.005,
           "alloc": 91.3,
           "leverage": "1.5x",
@@ -285,8 +285,8 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 116,
       "tradeStats": {
-        "totalRows": 5549,
-        "tradesWithPnl": 5548,
+        "totalRows": 5550,
+        "tradesWithPnl": 5549,
         "winRate": 87.6,
         "bestPct": 10.57,
         "worstPct": -5.67,
@@ -297,6 +297,14 @@
         "totalPnlVal": -81.77
       },
       "trades": [
+        {
+          "time": "2026-08-15 13:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 60730.46,
+          "current": 63009.7,
+          "pnl": 3.75
+        },
         {
           "time": "2026-08-15 13:10:12",
           "ticker": "BTC",
@@ -363,14 +371,6 @@
         },
         {
           "time": "2026-08-15 09:10:19",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 60730.46,
-          "current": 63048.7,
-          "pnl": 3.82
-        },
-        {
-          "time": "2026-08-15 09:10:04",
           "ticker": "BTC",
           "signal": "LONG 2x",
           "entry": 60730.46,
