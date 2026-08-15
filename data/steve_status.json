@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-15 15:18 UTC",
+  "lastUpdate": "2026-08-15 15:40 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,13 +15,13 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 437.03,
-      "freeCash": 121.75536046,
+      "balance": 437.3,
+      "freeCash": 121.75533061,
       "lastInference": "2026-08-15 17:10:08",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 63011.2,
+          "current_price": 63042.8,
           "shares": 0.005,
           "alloc": 91.32,
           "leverage": "1.5x",
@@ -277,7 +277,7 @@
         },
         {
           "d": "Aug 15",
-          "v": 522.08
+          "v": 522.13
         }
       ],
       "tradeCount": 8,
@@ -285,8 +285,8 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 117,
       "tradeStats": {
-        "totalRows": 5557,
-        "tradesWithPnl": 5556,
+        "totalRows": 5558,
+        "tradesWithPnl": 5557,
         "winRate": 87.7,
         "bestPct": 10.57,
         "worstPct": -5.67,
@@ -294,9 +294,17 @@
         "avgLossPct": -1.59,
         "biggestWinVal": 32.1,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -81.62
+        "totalPnlVal": -81.35
       },
       "trades": [
+        {
+          "time": "2026-08-15 17:30:02",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 60730.46,
+          "current": 63042.8,
+          "pnl": 3.81
+        },
         {
           "time": "2026-08-15 17:10:11",
           "ticker": "BTC",
@@ -367,14 +375,6 @@
           "signal": "LONG 2x",
           "entry": 60730.46,
           "current": 63009.23960507,
-          "pnl": 3.75
-        },
-        {
-          "time": "2026-08-15 13:10:04",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 60730.46,
-          "current": 63009.30309058,
           "pnl": 3.75
         }
       ]
@@ -1844,7 +1844,7 @@
       "tradeCount": 98,
       "openPositions": 5,
       "tradingStartDate": "2026-05-17",
-      "tradingDays": 89,
+      "tradingDays": 90,
       "tradeStats": {
         "totalRows": 5113,
         "tradesWithPnl": 5108,
