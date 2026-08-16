@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-16 16:51 UTC",
+  "lastUpdate": "2026-08-16 17:15 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,15 +15,15 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 438.09,
-      "freeCash": 121.70747529,
-      "lastInference": "2026-08-16 17:10:09",
+      "balance": 437.77,
+      "freeCash": 121.66646298,
+      "lastInference": "2026-08-16 19:10:09",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 63301.1,
+          "current_price": 63229.21830435,
           "shares": 0.005,
-          "alloc": 91.29,
+          "alloc": 91.25,
           "leverage": "1.5x",
           "sl": 57693.94,
           "tp": 66803.51
@@ -277,7 +277,7 @@
         },
         {
           "d": "Aug 16",
-          "v": 522.51
+          "v": 522.4
         }
       ],
       "tradeCount": 8,
@@ -285,8 +285,8 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 118,
       "tradeStats": {
-        "totalRows": 5607,
-        "tradesWithPnl": 5606,
+        "totalRows": 5609,
+        "tradesWithPnl": 5608,
         "winRate": 87.8,
         "bestPct": 10.57,
         "worstPct": -5.67,
@@ -294,9 +294,25 @@
         "avgLossPct": -1.59,
         "biggestWinVal": 32.1,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -80.56
+        "totalPnlVal": -80.88
       },
       "trades": [
+        {
+          "time": "2026-08-16 19:10:11",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 60730.46,
+          "current": 63229.21830435,
+          "pnl": 4.11
+        },
+        {
+          "time": "2026-08-16 19:10:05",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 60730.46,
+          "current": 63236.71265217,
+          "pnl": 4.13
+        },
         {
           "time": "2026-08-16 18:30:03",
           "ticker": "BTC",
@@ -360,22 +376,6 @@
           "entry": 60730.46,
           "current": 63031.01759656,
           "pnl": 3.79
-        },
-        {
-          "time": "2026-08-16 14:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 60730.46,
-          "current": 62990.1,
-          "pnl": 3.72
-        },
-        {
-          "time": "2026-08-16 13:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 60730.46,
-          "current": 62958.6,
-          "pnl": 3.67
         }
       ]
     },
