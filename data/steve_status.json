@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-17 11:35 UTC",
+  "lastUpdate": "2026-08-17 11:58 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,7 +15,7 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 440.02,
+      "balance": 439.7,
       "freeCash": 121.65347476,
       "lastInference": "2026-08-17 13:10:16",
       "positions": {
@@ -294,7 +294,7 @@
         "avgLossPct": -1.59,
         "biggestWinVal": 32.1,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -78.63
+        "totalPnlVal": -78.95
       },
       "trades": [
         {
@@ -695,7 +695,7 @@
       "tradingStartDate": "2026-04-27",
       "tradingDays": 111,
       "tradeStats": {
-        "totalRows": 3241,
+        "totalRows": 3242,
         "tradesWithPnl": 533,
         "winRate": 45.2,
         "bestPct": 11.66,
@@ -707,6 +707,14 @@
         "totalPnlVal": -100.7
       },
       "trades": [
+        {
+          "time": "2026-08-17 13:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-17 12:45:07",
           "ticker": "PORTFOLIO",
@@ -773,14 +781,6 @@
         },
         {
           "time": "2026-08-17 04:45:07",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-17 03:45:08",
           "ticker": "PORTFOLIO",
           "signal": "CASH",
           "entry": 0.0,
@@ -1178,7 +1178,7 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 8440.35,
+      "balance": 8447.89,
       "freeCash": 7447.36,
       "lastInference": "2026-08-17 08:30:09",
       "positions": {
@@ -1189,10 +1189,10 @@
         "DOGE": 2
       },
       "lastPrices": {
-        "BTC": 63383.8281,
-        "ETH": 1896.66,
-        "AVAX": 6.338,
-        "LINK": 9.446,
+        "BTC": 63626.5,
+        "ETH": 1903.99,
+        "AVAX": 6.33,
+        "LINK": 9.483,
         "DOGE": 0.0702
       },
       "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
@@ -1453,7 +1453,7 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 106,
       "tradeStats": {
-        "totalRows": 4829,
+        "totalRows": 4830,
         "tradesWithPnl": 2238,
         "winRate": 35.3,
         "bestPct": 7.02,
@@ -1462,9 +1462,17 @@
         "avgLossPct": -2.23,
         "biggestWinVal": 78.22,
         "biggestLossVal": -226.56,
-        "totalPnlVal": -1559.65
+        "totalPnlVal": -1552.11
       },
       "trades": [
+        {
+          "time": "2026-08-17 13:45:05",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-17 12:30:10",
           "ticker": "LINK",
@@ -1536,14 +1544,6 @@
           "entry": 8.97094582,
           "current": 9.403,
           "pnl": 4.82
-        },
-        {
-          "time": "2026-08-17 08:30:11",
-          "ticker": "AVAX",
-          "signal": "LONG 1x",
-          "entry": 6.33608,
-          "current": 6.3508,
-          "pnl": 0.23
         }
       ],
       "candidateVersion": "4h_v24_sharpe_consolidation_dd_penalty_peak_recovery_feature_stability"
@@ -1571,8 +1571,8 @@
         "14": "LONG 20x"
       },
       "cashSignal": 6,
-      "balance": 1004.66,
-      "freeCash": 437.53,
+      "balance": 1003.82,
+      "freeCash": 434.44,
       "lastInference": "2026-08-17 00:45:12",
       "positions": {
         "BTC": 13,
@@ -1582,11 +1582,11 @@
         "DOGE": 10
       },
       "lastPrices": {
-        "BTC": 63191.0,
-        "ETH": 1894.45,
-        "SOL": 75.1615,
-        "AVAX": 6.3192,
-        "DOGE": 0.070081
+        "BTC": 63280.5,
+        "ETH": 1907.7,
+        "SOL": 75.738,
+        "AVAX": 6.3409,
+        "DOGE": 0.070183
       },
       "modelVersion": "hl_v2_15_grace_recovery_minimal",
       "modelCreatedDate": "2026-06-12",
@@ -1855,7 +1855,7 @@
         "avgLossPct": -3.18,
         "biggestWinVal": 144.33,
         "biggestLossVal": -126.49,
-        "totalPnlVal": 5.66
+        "totalPnlVal": 4.82
       },
       "trades": [
         {
