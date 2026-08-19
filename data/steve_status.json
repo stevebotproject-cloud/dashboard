@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-19 19:31 UTC",
+  "lastUpdate": "2026-08-19 19:55 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,7 +15,7 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 455.72,
+      "balance": 456.34,
       "freeCash": 251.03654187,
       "lastInference": "2026-08-19 21:10:20",
       "positions": {
@@ -294,7 +294,7 @@
         "avgLossPct": -1.59,
         "biggestWinVal": 32.1,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -62.93
+        "totalPnlVal": -62.31
       },
       "trades": [
         {
@@ -416,26 +416,26 @@
         "WMT": 0
       },
       "lastPrices": {
-        "AAPL": 314.84,
-        "AMGN": 441.32,
-        "AXP": 340.54,
-        "BA": 222.05,
-        "CAT": 809.55,
-        "CRM": 207.02,
-        "CSCO": 111.935,
-        "CVX": 206.5792,
-        "DIS": 106.505,
-        "GS": 1019.04,
-        "HD": 344.39,
-        "HON": 223.06,
-        "IBM": 237.0,
-        "JNJ": 274.4,
-        "JPM": 356.15,
-        "KO": 90.5303,
-        "MCD": 267.99,
-        "MMM": 181.37,
-        "MSFT": 483.86,
-        "WMT": 115.98
+        "AAPL": 315.68,
+        "AMGN": 442.64,
+        "AXP": 339.795,
+        "BA": 221.355,
+        "CAT": 813.27,
+        "CRM": 206.88,
+        "CSCO": 111.24,
+        "CVX": 205.42,
+        "DIS": 106.66,
+        "GS": 1019.94,
+        "HD": 344.61,
+        "HON": 222.45,
+        "IBM": 236.715,
+        "JNJ": 273.85,
+        "JPM": 356.705,
+        "KO": 90.435,
+        "MCD": 267.44,
+        "MMM": 180.84,
+        "MSFT": 483.58,
+        "WMT": 114.395
       },
       "modelVersion": "traditional_1d_v8_dd_control",
       "modelCreatedDate": "2026-04-25",
@@ -695,7 +695,7 @@
       "tradingStartDate": "2026-04-27",
       "tradingDays": 114,
       "tradeStats": {
-        "totalRows": 3311,
+        "totalRows": 3312,
         "tradesWithPnl": 536,
         "winRate": 45.0,
         "bestPct": 11.66,
@@ -707,6 +707,14 @@
         "totalPnlVal": -95.67
       },
       "trades": [
+        {
+          "time": "2026-08-19 21:45:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-19 20:45:09",
           "ticker": "PORTFOLIO",
@@ -773,14 +781,6 @@
         },
         {
           "time": "2026-08-19 15:45:11",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-19 14:45:14",
           "ticker": "PORTFOLIO",
           "signal": "CASH",
           "entry": 0.0,
@@ -1189,11 +1189,11 @@
         "DOGE": 0
       },
       "lastPrices": {
-        "BTC": 68233.2109,
-        "ETH": 2086.02,
-        "AVAX": 6.524,
-        "LINK": 10.018,
-        "DOGE": 0.0726
+        "BTC": 68385.9688,
+        "ETH": 2099.01,
+        "AVAX": 6.555,
+        "LINK": 10.137,
+        "DOGE": 0.0729
       },
       "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
       "modelCreatedDate": "2026-05-18",
@@ -1453,7 +1453,7 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 108,
       "tradeStats": {
-        "totalRows": 4935,
+        "totalRows": 4936,
         "tradesWithPnl": 2286,
         "winRate": 35.8,
         "bestPct": 7.02,
@@ -1465,6 +1465,14 @@
         "totalPnlVal": -1544.8
       },
       "trades": [
+        {
+          "time": "2026-08-19 21:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-19 20:30:12",
           "ticker": "PORTFOLIO",
@@ -1536,14 +1544,6 @@
           "entry": 0.0,
           "current": 0.0,
           "pnl": 0.0
-        },
-        {
-          "time": "2026-08-19 14:30:17",
-          "ticker": "LINK",
-          "signal": "LONG 1x",
-          "entry": 9.5004,
-          "current": 9.774,
-          "pnl": 2.88
         }
       ],
       "candidateVersion": "4h_v24_sharpe_consolidation_dd_penalty_peak_recovery_feature_stability"
