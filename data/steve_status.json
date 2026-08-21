@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-21 21:18 UTC",
+  "lastUpdate": "2026-08-21 21:44 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,13 +15,13 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 484.03,
-      "freeCash": 250.99563687,
+      "balance": 485.69,
+      "freeCash": 250.99523036,
       "lastInference": "2026-08-21 23:10:08",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 77398.8,
+          "current_price": 78075.6,
           "shares": 0.003,
           "alloc": 125.5,
           "leverage": "1.0x",
@@ -277,7 +277,7 @@
         },
         {
           "d": "Aug 21",
-          "v": 553.1
+          "v": 554.49
         }
       ],
       "tradeCount": 8,
@@ -285,18 +285,26 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 123,
       "tradeStats": {
-        "totalRows": 5857,
-        "tradesWithPnl": 5856,
+        "totalRows": 5858,
+        "tradesWithPnl": 5857,
         "winRate": 88.3,
-        "bestPct": 28.25,
+        "bestPct": 28.56,
         "worstPct": -5.67,
-        "avgWinPct": 4.99,
+        "avgWinPct": 5.0,
         "avgLossPct": -1.59,
-        "biggestWinVal": 51.47,
+        "biggestWinVal": 52.04,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -34.62
+        "totalPnlVal": -32.96
       },
       "trades": [
+        {
+          "time": "2026-08-21 23:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78075.6,
+          "pnl": 28.56
+        },
         {
           "time": "2026-08-21 23:10:11",
           "ticker": "BTC",
@@ -363,14 +371,6 @@
         },
         {
           "time": "2026-08-21 19:10:11",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 77594.1,
-          "pnl": 27.77
-        },
-        {
-          "time": "2026-08-21 19:10:04",
           "ticker": "BTC",
           "signal": "LONG 1x",
           "entry": 60730.46,
