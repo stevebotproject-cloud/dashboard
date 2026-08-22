@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-22 20:18 UTC",
+  "lastUpdate": "2026-08-22 20:44 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,13 +15,13 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 483.2,
-      "freeCash": 250.92650363,
+      "balance": 483.07,
+      "freeCash": 250.92650131,
       "lastInference": "2026-08-22 21:10:08",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 77286.7,
+          "current_price": 77295.4,
           "shares": 0.003,
           "alloc": 125.46,
           "leverage": "1.0x",
@@ -277,7 +277,7 @@
         },
         {
           "d": "Aug 22",
-          "v": 552.85
+          "v": 552.87
         }
       ],
       "tradeCount": 8,
@@ -285,8 +285,8 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 124,
       "tradeStats": {
-        "totalRows": 5902,
-        "tradesWithPnl": 5901,
+        "totalRows": 5903,
+        "tradesWithPnl": 5902,
         "winRate": 88.4,
         "bestPct": 29.67,
         "worstPct": -5.67,
@@ -294,9 +294,17 @@
         "avgLossPct": -1.59,
         "biggestWinVal": 54.05,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -35.45
+        "totalPnlVal": -35.58
       },
       "trades": [
+        {
+          "time": "2026-08-22 22:30:04",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 77295.4,
+          "pnl": 27.28
+        },
         {
           "time": "2026-08-22 21:30:03",
           "ticker": "BTC",
@@ -368,14 +376,6 @@
           "entry": 60730.46,
           "current": 76991.6,
           "pnl": 26.78
-        },
-        {
-          "time": "2026-08-22 17:10:19",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 76951.98035145,
-          "pnl": 26.71
         }
       ]
     },
@@ -1180,7 +1180,7 @@
       "cashSignal": 2,
       "balance": 8455.2,
       "freeCash": 8455.2,
-      "lastInference": "2026-08-22 16:30:09",
+      "lastInference": "2026-08-22 20:30:09",
       "positions": {
         "BTC": 1,
         "ETH": 2,
@@ -1189,11 +1189,11 @@
         "DOGE": 0
       },
       "lastPrices": {
-        "BTC": 77419.9375,
-        "ETH": 2434.6499,
-        "AVAX": 7.579,
-        "LINK": 11.741,
-        "DOGE": 0.0936
+        "BTC": 77301.96875,
+        "ETH": 2437.830078125,
+        "AVAX": 7.560999870300293,
+        "LINK": 11.755999565124512,
+        "DOGE": 0.09419000148773193
       },
       "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
       "modelCreatedDate": "2026-05-18",
@@ -1453,7 +1453,7 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 111,
       "tradeStats": {
-        "totalRows": 5044,
+        "totalRows": 5046,
         "tradesWithPnl": 2286,
         "winRate": 35.8,
         "bestPct": 7.02,
@@ -1465,6 +1465,22 @@
         "totalPnlVal": -1544.8
       },
       "trades": [
+        {
+          "time": "2026-08-22 22:30:16",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-22 22:30:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-22 21:45:06",
           "ticker": "PORTFOLIO",
@@ -1523,22 +1539,6 @@
         },
         {
           "time": "2026-08-22 16:30:11",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-22 16:30:08",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-22 15:45:04",
           "ticker": "PORTFOLIO",
           "signal": "CASH",
           "entry": 0.0,
