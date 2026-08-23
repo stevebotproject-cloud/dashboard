@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-23 08:53 UTC",
+  "lastUpdate": "2026-08-23 09:26 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,15 +15,15 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 480.55,
-      "freeCash": 250.88122977,
-      "lastInference": "2026-08-23 09:10:13",
+      "balance": 480.54,
+      "freeCash": 250.83373066,
+      "lastInference": "2026-08-23 11:10:10",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 76234.0,
+          "current_price": 76562.4707971,
           "shares": 0.003,
-          "alloc": 125.43,
+          "alloc": 125.42,
           "leverage": "1.0x",
           "sl": 57693.94,
           "tp": 66803.51
@@ -277,7 +277,7 @@
         },
         {
           "d": "Aug 23",
-          "v": 550.67
+          "v": 551.35
         }
       ],
       "tradeCount": 8,
@@ -285,18 +285,34 @@
       "tradingStartDate": "2026-04-20",
       "tradingDays": 124,
       "tradeStats": {
-        "totalRows": 5927,
-        "tradesWithPnl": 5926,
+        "totalRows": 5929,
+        "tradesWithPnl": 5928,
         "winRate": 88.4,
         "bestPct": 29.67,
         "worstPct": -5.67,
-        "avgWinPct": 5.29,
+        "avgWinPct": 5.3,
         "avgLossPct": -1.59,
         "biggestWinVal": 54.05,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -38.1
+        "totalPnlVal": -38.11
       },
       "trades": [
+        {
+          "time": "2026-08-23 11:10:14",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 76562.4707971,
+          "pnl": 26.07
+        },
+        {
+          "time": "2026-08-23 11:10:05",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 76576.18063043,
+          "pnl": 26.09
+        },
         {
           "time": "2026-08-23 10:30:03",
           "ticker": "BTC",
@@ -360,22 +376,6 @@
           "entry": 60730.46,
           "current": 76299.0,
           "pnl": 25.64
-        },
-        {
-          "time": "2026-08-23 06:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 76968.87150724,
-          "pnl": 26.74
-        },
-        {
-          "time": "2026-08-23 05:30:03",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 76996.44217822,
-          "pnl": 26.78
         }
       ]
     },
@@ -803,14 +803,14 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 9746.23,
+      "balance": 9791.41,
       "freeCash": 224.57,
       "lastInference": "2026-08-23 00:00:11",
       "positions": {
         "BTC": 3
       },
       "lastPrices": {
-        "BTC": 76190.9922
+        "BTC": 76568.8672
       },
       "modelVersion": "btc_1d_v11_dd_sharp_balance",
       "modelCreatedDate": "2026-05-08",
@@ -1070,7 +1070,7 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 112,
       "tradeStats": {
-        "totalRows": 4983,
+        "totalRows": 4984,
         "tradesWithPnl": 456,
         "winRate": 10.3,
         "bestPct": 1.4,
@@ -1079,9 +1079,17 @@
         "avgLossPct": -12.65,
         "biggestWinVal": 9801.87,
         "biggestLossVal": -2224.69,
-        "totalPnlVal": -253.77
+        "totalPnlVal": -208.59
       },
       "trades": [
+        {
+          "time": "2026-08-23 11:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-23 10:15:04",
           "ticker": "PORTFOLIO",
@@ -1152,14 +1160,6 @@
           "signal": "CASH",
           "entry": 0.0,
           "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-23 06:00:11",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 0.0,
-          "current": 76913.91,
           "pnl": 0.0
         }
       ],
