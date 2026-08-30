@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-30 10:42 UTC",
+  "lastUpdate": "2026-08-30 15:03 UTC",
   "watchdogStatus": "OK",
   "workspaces": {
     "crypto_live": {
@@ -15,13 +15,13 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 484.82,
-      "freeCash": 250.49106672,
-      "lastInference": "2026-08-30 11:10:09",
+      "balance": 486.76,
+      "freeCash": 250.50157861,
+      "lastInference": "2026-08-30 15:10:12",
       "positions": {
         "BTC": {
           "entry_price": 60730.46,
-          "current_price": 78023.83320652,
+          "current_price": 78828.46727899,
           "shares": 0.003,
           "alloc": 125.25,
           "leverage": "1.0x",
@@ -277,26 +277,90 @@
         },
         {
           "d": "Aug 30",
-          "v": 554.32
+          "v": 555.98
         }
       ],
       "tradeCount": 8,
       "openPositions": 1,
       "tradingStartDate": "2026-04-20",
-      "tradingDays": 131,
+      "tradingDays": 132,
       "tradeStats": {
-        "totalRows": 6267,
-        "tradesWithPnl": 6266,
+        "totalRows": 6275,
+        "tradesWithPnl": 6274,
         "winRate": 89.1,
         "bestPct": 33.54,
         "worstPct": -5.67,
-        "avgWinPct": 6.76,
+        "avgWinPct": 6.79,
         "avgLossPct": -1.59,
         "biggestWinVal": 61.1,
         "biggestLossVal": -20.22,
-        "totalPnlVal": -33.83
+        "totalPnlVal": -31.89
       },
       "trades": [
+        {
+          "time": "2026-08-30 16:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78828.46727899,
+          "pnl": 29.8
+        },
+        {
+          "time": "2026-08-30 15:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78698.92087682,
+          "pnl": 29.59
+        },
+        {
+          "time": "2026-08-30 15:10:15",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78651.5,
+          "pnl": 29.51
+        },
+        {
+          "time": "2026-08-30 15:10:06",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78645.7,
+          "pnl": 29.5
+        },
+        {
+          "time": "2026-08-30 14:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78595.7,
+          "pnl": 29.42
+        },
+        {
+          "time": "2026-08-30 13:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78191.4,
+          "pnl": 28.75
+        },
+        {
+          "time": "2026-08-30 13:10:22",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78162.79553986,
+          "pnl": 28.7
+        },
+        {
+          "time": "2026-08-30 13:10:06",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 78162.39019927,
+          "pnl": 28.7
+        },
         {
           "time": "2026-08-30 12:30:02",
           "ticker": "BTC",
@@ -312,70 +376,6 @@
           "entry": 60730.46,
           "current": 77964.3,
           "pnl": 28.38
-        },
-        {
-          "time": "2026-08-30 11:10:11",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78050.14278985,
-          "pnl": 28.52
-        },
-        {
-          "time": "2026-08-30 11:10:05",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78050.30171739,
-          "pnl": 28.52
-        },
-        {
-          "time": "2026-08-30 10:30:03",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78125.7,
-          "pnl": 28.64
-        },
-        {
-          "time": "2026-08-30 09:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78194.87541667,
-          "pnl": 28.76
-        },
-        {
-          "time": "2026-08-30 09:10:22",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78220.1,
-          "pnl": 28.8
-        },
-        {
-          "time": "2026-08-30 09:10:04",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78220.1,
-          "pnl": 28.8
-        },
-        {
-          "time": "2026-08-30 08:30:02",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78154.86900725,
-          "pnl": 28.69
-        },
-        {
-          "time": "2026-08-30 07:30:03",
-          "ticker": "BTC",
-          "signal": "LONG 1x",
-          "entry": 60730.46,
-          "current": 78113.5,
-          "pnl": 28.62
         }
       ]
     },
@@ -693,9 +693,9 @@
       "tradeCount": 0,
       "openPositions": 16,
       "tradingStartDate": "2026-04-27",
-      "tradingDays": 124,
+      "tradingDays": 125,
       "tradeStats": {
-        "totalRows": 3622,
+        "totalRows": 3628,
         "tradesWithPnl": 551,
         "winRate": 43.9,
         "bestPct": 11.66,
@@ -707,6 +707,54 @@
         "totalPnlVal": -101.46
       },
       "trades": [
+        {
+          "time": "2026-08-30 16:45:08",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 16:00:11",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 15:45:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 14:45:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 13:45:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 12:45:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-30 11:45:09",
           "ticker": "PORTFOLIO",
@@ -738,54 +786,6 @@
           "entry": 0.0,
           "current": 0.0,
           "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 07:45:10",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 06:45:09",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 05:45:09",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 04:45:08",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 03:45:09",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 02:45:09",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
         }
       ],
       "candidateVersion": "traditional_1d_v27_v8_dd_penalty_sharp_focus_corrected"
@@ -803,14 +803,14 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 9964.34,
+      "balance": 10082.56,
       "freeCash": 224.57,
       "lastInference": "2026-08-30 00:00:21",
       "positions": {
         "BTC": 4
       },
       "lastPrices": {
-        "BTC": 78005.5625
+        "BTC": 78916.5312
       },
       "modelVersion": "btc_1d_v11_dd_sharp_balance",
       "modelCreatedDate": "2026-05-08",
@@ -1070,7 +1070,7 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 119,
       "tradeStats": {
-        "totalRows": 5323,
+        "totalRows": 5331,
         "tradesWithPnl": 456,
         "winRate": 10.3,
         "bestPct": 1.4,
@@ -1079,9 +1079,73 @@
         "avgLossPct": -12.65,
         "biggestWinVal": 10081.55,
         "biggestLossVal": -2224.69,
-        "totalPnlVal": -35.66
+        "totalPnlVal": 82.56
       },
       "trades": [
+        {
+          "time": "2026-08-30 16:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 16:00:13",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 0.0,
+          "current": 78843.9,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 16:00:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 15:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 14:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 14:00:11",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 0.0,
+          "current": 78150.156,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 14:00:08",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 13:15:05",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-30 12:15:04",
           "ticker": "PORTFOLIO",
@@ -1096,70 +1160,6 @@
           "signal": "LONG 2x",
           "entry": 0.0,
           "current": 78028.543,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 12:00:08",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 11:15:04",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 10:15:04",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 10:00:10",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 0.0,
-          "current": 78113.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 10:00:06",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 09:15:04",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 08:15:04",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 08:00:12",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 0.0,
-          "current": 78150.0,
           "pnl": 0.0
         }
       ],
@@ -1178,22 +1178,22 @@
         "4": "LONG 2x"
       },
       "cashSignal": 2,
-      "balance": 8387.57,
-      "freeCash": 5640.31,
-      "lastInference": "2026-08-30 08:30:09",
+      "balance": 8404.9,
+      "freeCash": 6899.29,
+      "lastInference": "2026-08-30 12:30:10",
       "positions": {
         "BTC": 4,
         "ETH": 4,
-        "AVAX": 4,
-        "LINK": 0,
-        "DOGE": 3
+        "AVAX": 0,
+        "LINK": 1,
+        "DOGE": 1
       },
       "lastPrices": {
-        "BTC": 78048.2109,
-        "ETH": 2455.77,
-        "AVAX": 7.352,
-        "LINK": 11.377,
-        "DOGE": 0.0847
+        "BTC": 78859.2422,
+        "ETH": 2477.1499,
+        "AVAX": 7.419,
+        "LINK": 11.537,
+        "DOGE": 0.0856
       },
       "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
       "modelCreatedDate": "2026-05-18",
@@ -1445,7 +1445,7 @@
         },
         {
           "d": "Aug 30",
-          "v": 9981.51
+          "v": 9995.19
         }
       ],
       "tradeCount": 0,
@@ -1453,18 +1453,82 @@
       "tradingStartDate": "2026-05-02",
       "tradingDays": 119,
       "tradeStats": {
-        "totalRows": 5431,
-        "tradesWithPnl": 2470,
+        "totalRows": 5439,
+        "tradesWithPnl": 2474,
         "winRate": 35.4,
         "bestPct": 7.02,
         "worstPct": -23.2,
         "avgWinPct": 1.18,
-        "avgLossPct": -2.15,
+        "avgLossPct": -2.14,
         "biggestWinVal": 78.22,
         "biggestLossVal": -226.56,
-        "totalPnlVal": -1612.43
+        "totalPnlVal": -1595.1
       },
       "trades": [
+        {
+          "time": "2026-08-30 16:30:13",
+          "ticker": "ETH",
+          "signal": "LONG 2x",
+          "entry": 2487.900655439,
+          "current": 2475.107,
+          "pnl": -0.51
+        },
+        {
+          "time": "2026-08-30 16:30:13",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 77586.03,
+          "current": 78842.871,
+          "pnl": 1.62
+        },
+        {
+          "time": "2026-08-30 16:30:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 15:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 14:30:18",
+          "ticker": "ETH",
+          "signal": "LONG 2x",
+          "entry": 2487.900655439,
+          "current": 2464.377,
+          "pnl": -0.95
+        },
+        {
+          "time": "2026-08-30 14:30:18",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 77586.03,
+          "current": 78529.42,
+          "pnl": 1.22
+        },
+        {
+          "time": "2026-08-30 14:30:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-08-30 13:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
         {
           "time": "2026-08-30 12:30:11",
           "ticker": "DOGE",
@@ -1480,70 +1544,6 @@
           "entry": 7.434964494,
           "current": 7.33785,
           "pnl": -1.31
-        },
-        {
-          "time": "2026-08-30 12:30:11",
-          "ticker": "ETH",
-          "signal": "LONG 2x",
-          "entry": 2487.900655439,
-          "current": 2454.928,
-          "pnl": -1.33
-        },
-        {
-          "time": "2026-08-30 12:30:11",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 77586.03,
-          "current": 78057.4,
-          "pnl": 0.61
-        },
-        {
-          "time": "2026-08-30 12:30:08",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 11:45:06",
-          "ticker": "PORTFOLIO",
-          "signal": "CASH",
-          "entry": 0.0,
-          "current": 0.0,
-          "pnl": 0.0
-        },
-        {
-          "time": "2026-08-30 10:30:16",
-          "ticker": "DOGE",
-          "signal": "LONG 1x",
-          "entry": 0.0852261,
-          "current": 0.084662,
-          "pnl": -0.66
-        },
-        {
-          "time": "2026-08-30 10:30:16",
-          "ticker": "AVAX",
-          "signal": "LONG 2x",
-          "entry": 7.434964494,
-          "current": 7.322,
-          "pnl": -1.52
-        },
-        {
-          "time": "2026-08-30 10:30:16",
-          "ticker": "ETH",
-          "signal": "LONG 2x",
-          "entry": 2487.900655439,
-          "current": 2459.3,
-          "pnl": -1.15
-        },
-        {
-          "time": "2026-08-30 10:30:16",
-          "ticker": "BTC",
-          "signal": "LONG 2x",
-          "entry": 77586.03,
-          "current": 78155.7,
-          "pnl": 0.73
         }
       ],
       "candidateVersion": "4h_v24_sharpe_consolidation_dd_penalty_peak_recovery_feature_stability"
@@ -1571,8 +1571,8 @@
         "14": "LONG 20x"
       },
       "cashSignal": 6,
-      "balance": 819.17,
-      "freeCash": 152.16,
+      "balance": 830.15,
+      "freeCash": 144.58,
       "lastInference": "2026-08-30 00:45:11",
       "positions": {
         "BTC": 1,
@@ -1582,11 +1582,11 @@
         "DOGE": 8
       },
       "lastPrices": {
-        "BTC": 78316.5,
-        "ETH": 2397.85,
-        "SOL": 104.495,
-        "AVAX": 7.3393,
-        "DOGE": 0.084246
+        "BTC": 78693.0,
+        "ETH": 2414.05,
+        "SOL": 106.6,
+        "AVAX": 7.4278,
+        "DOGE": 0.085151
       },
       "modelVersion": "hl_v2_15_grace_recovery_minimal",
       "modelCreatedDate": "2026-06-12",
@@ -1838,7 +1838,7 @@
         },
         {
           "d": "Aug 30",
-          "v": 1026.19
+          "v": 1035.91
         }
       ],
       "tradeCount": 109,
@@ -1846,97 +1846,97 @@
       "tradingStartDate": "2026-05-17",
       "tradingDays": 104,
       "tradeStats": {
-        "totalRows": 5935,
-        "tradesWithPnl": 5930,
+        "totalRows": 5947,
+        "tradesWithPnl": 5942,
         "winRate": 53.2,
         "bestPct": 32.49,
         "worstPct": -25.14,
         "avgWinPct": 4.15,
-        "avgLossPct": -3.3,
+        "avgLossPct": -3.29,
         "biggestWinVal": 150.32,
         "biggestLossVal": -126.49,
-        "totalPnlVal": -179.83
+        "totalPnlVal": -168.85
       },
       "trades": [
         {
-          "time": "2026-08-30 10:45:19",
+          "time": "2026-08-30 16:45:22",
           "ticker": "DOGE",
           "signal": "LONG 2x",
           "entry": 0.076313,
-          "current": 0.084359,
-          "pnl": 10.54
+          "current": 0.085251,
+          "pnl": 11.71
         },
         {
-          "time": "2026-08-30 10:45:19",
+          "time": "2026-08-30 16:45:22",
           "ticker": "SOL",
           "signal": "LONG 15x",
           "entry": 105.7852,
-          "current": 104.69,
-          "pnl": -1.04
+          "current": 106.625,
+          "pnl": 0.79
         },
         {
-          "time": "2026-08-30 10:45:19",
+          "time": "2026-08-30 16:45:22",
           "ticker": "ETH",
           "signal": "LONG 1x",
           "entry": 2378.04,
-          "current": 2401.95,
-          "pnl": 1.01
+          "current": 2413.75,
+          "pnl": 1.5
         },
         {
-          "time": "2026-08-30 10:45:19",
+          "time": "2026-08-30 16:45:22",
           "ticker": "BTC",
           "signal": "SHORT 10x",
-          "entry": 78482.0,
-          "current": 78341.0,
-          "pnl": 0.18
+          "entry": 78503.7,
+          "current": 78689.5,
+          "pnl": -0.24
         },
         {
-          "time": "2026-08-30 08:45:18",
+          "time": "2026-08-30 14:45:20",
           "ticker": "DOGE",
           "signal": "LONG 2x",
           "entry": 0.076313,
-          "current": 0.084894,
-          "pnl": 11.24
+          "current": 0.085036,
+          "pnl": 11.43
         },
         {
-          "time": "2026-08-30 08:45:18",
+          "time": "2026-08-30 14:45:20",
           "ticker": "SOL",
           "signal": "LONG 15x",
           "entry": 105.7852,
-          "current": 104.885,
-          "pnl": -0.85
+          "current": 105.42,
+          "pnl": -0.35
         },
         {
-          "time": "2026-08-30 08:45:18",
+          "time": "2026-08-30 14:45:20",
           "ticker": "ETH",
           "signal": "LONG 1x",
           "entry": 2378.04,
-          "current": 2411.2,
-          "pnl": 1.39
+          "current": 2405.45,
+          "pnl": 1.15
         },
         {
-          "time": "2026-08-30 08:45:18",
+          "time": "2026-08-30 14:45:20",
           "ticker": "BTC",
           "signal": "SHORT 10x",
-          "entry": 78482.0,
-          "current": 78532.5,
-          "pnl": -0.06
+          "entry": 78481.8,
+          "current": 78583.5,
+          "pnl": -0.13
         },
         {
-          "time": "2026-08-30 06:45:20",
+          "time": "2026-08-30 12:45:22",
           "ticker": "DOGE",
           "signal": "LONG 2x",
           "entry": 0.076313,
-          "current": 0.084611,
-          "pnl": 10.87
+          "current": 0.084803,
+          "pnl": 11.13
         },
         {
-          "time": "2026-08-30 06:45:20",
+          "time": "2026-08-30 12:45:22",
           "ticker": "SOL",
           "signal": "LONG 15x",
           "entry": 105.7852,
-          "current": 104.825,
-          "pnl": -0.91
+          "current": 104.91,
+          "pnl": -0.83
         }
       ],
       "candidateVersion": "hl_v2_16_margin_efficiency_optimizer"
