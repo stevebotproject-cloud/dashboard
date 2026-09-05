@@ -1,1 +1,2036 @@
-{"error":"fetch failed","lastUpdate":"2026-09-05 17:22 UTC"}
+{
+  "lastUpdate": "2026-09-05 19:15 UTC",
+  "watchdogStatus": "OK",
+  "workspaces": {
+    "crypto_live": {
+      "label": "Crypto BTC",
+      "broker": "Aster DEX",
+      "status": "live",
+      "initialBalance": 518.65,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 490.09,
+      "freeCash": 250.23243361,
+      "lastInference": "2026-09-05 21:10:21",
+      "positions": {
+        "BTC": {
+          "entry_price": 60730.46,
+          "current_price": 79914.48904348,
+          "shares": 0.003,
+          "alloc": 125.12,
+          "leverage": "1.0x",
+          "sl": 57693.94,
+          "tp": 66803.51
+        }
+      },
+      "lastPrices": {},
+      "modelVersion": "legacy",
+      "modelType": "PPO",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": null,
+        "returnPct": null,
+        "maxDD": null
+      },
+      "equityCurve": [
+        {
+          "d": "Jul 8",
+          "v": 521.36
+        },
+        {
+          "d": "Jul 9",
+          "v": 523.66
+        },
+        {
+          "d": "Jul 10",
+          "v": 525.18
+        },
+        {
+          "d": "Jul 11",
+          "v": 525.89
+        },
+        {
+          "d": "Jul 12",
+          "v": 525.36
+        },
+        {
+          "d": "Jul 13",
+          "v": 521.21
+        },
+        {
+          "d": "Jul 14",
+          "v": 526.5
+        },
+        {
+          "d": "Jul 15",
+          "v": 526.91
+        },
+        {
+          "d": "Jul 16",
+          "v": 523.55
+        },
+        {
+          "d": "Jul 17",
+          "v": 525.46
+        },
+        {
+          "d": "Jul 18",
+          "v": 526.62
+        },
+        {
+          "d": "Jul 19",
+          "v": 523.91
+        },
+        {
+          "d": "Jul 20",
+          "v": 527.79
+        },
+        {
+          "d": "Jul 21",
+          "v": 529.82
+        },
+        {
+          "d": "Jul 22",
+          "v": 529.0
+        },
+        {
+          "d": "Jul 23",
+          "v": 524.78
+        },
+        {
+          "d": "Jul 24",
+          "v": 523.5
+        },
+        {
+          "d": "Jul 25",
+          "v": 523.68
+        },
+        {
+          "d": "Jul 26",
+          "v": 524.42
+        },
+        {
+          "d": "Jul 27",
+          "v": 524.46
+        },
+        {
+          "d": "Jul 28",
+          "v": 523.18
+        },
+        {
+          "d": "Jul 29",
+          "v": 522.77
+        },
+        {
+          "d": "Jul 30",
+          "v": 526.76
+        },
+        {
+          "d": "Jul 31",
+          "v": 523.23
+        },
+        {
+          "d": "Aug 1",
+          "v": 521.7
+        },
+        {
+          "d": "Aug 2",
+          "v": 524.38
+        },
+        {
+          "d": "Aug 3",
+          "v": 524.73
+        },
+        {
+          "d": "Aug 4",
+          "v": 525.83
+        },
+        {
+          "d": "Aug 5",
+          "v": 526.68
+        },
+        {
+          "d": "Aug 6",
+          "v": 526.23
+        },
+        {
+          "d": "Aug 7",
+          "v": 527.36
+        },
+        {
+          "d": "Aug 8",
+          "v": 527.44
+        },
+        {
+          "d": "Aug 9",
+          "v": 527.65
+        },
+        {
+          "d": "Aug 10",
+          "v": 525.55
+        },
+        {
+          "d": "Aug 11",
+          "v": 523.04
+        },
+        {
+          "d": "Aug 12",
+          "v": 522.77
+        },
+        {
+          "d": "Aug 13",
+          "v": 522.71
+        },
+        {
+          "d": "Aug 14",
+          "v": 521.87
+        },
+        {
+          "d": "Aug 15",
+          "v": 522.24
+        },
+        {
+          "d": "Aug 16",
+          "v": 522.06
+        },
+        {
+          "d": "Aug 17",
+          "v": 524.02
+        },
+        {
+          "d": "Aug 18",
+          "v": 524.44
+        },
+        {
+          "d": "Aug 19",
+          "v": 536.99
+        },
+        {
+          "d": "Aug 20",
+          "v": 543.24
+        },
+        {
+          "d": "Aug 21",
+          "v": 554.49
+        },
+        {
+          "d": "Aug 22",
+          "v": 552.64
+        },
+        {
+          "d": "Aug 23",
+          "v": 554.32
+        },
+        {
+          "d": "Aug 24",
+          "v": 556.14
+        },
+        {
+          "d": "Aug 25",
+          "v": 555.18
+        },
+        {
+          "d": "Aug 26",
+          "v": 555.75
+        },
+        {
+          "d": "Aug 27",
+          "v": 558.42
+        },
+        {
+          "d": "Aug 28",
+          "v": 553.01
+        },
+        {
+          "d": "Aug 29",
+          "v": 554.42
+        },
+        {
+          "d": "Aug 30",
+          "v": 555.56
+        },
+        {
+          "d": "Aug 31",
+          "v": 556.19
+        },
+        {
+          "d": "Sep 1",
+          "v": 552.51
+        },
+        {
+          "d": "Sep 2",
+          "v": 552.7
+        },
+        {
+          "d": "Sep 3",
+          "v": 561.92
+        },
+        {
+          "d": "Sep 4",
+          "v": 557.8
+        },
+        {
+          "d": "Sep 5",
+          "v": 558.17
+        }
+      ],
+      "tradeCount": 8,
+      "openPositions": 1,
+      "tradingStartDate": "2026-04-20",
+      "tradingDays": 138,
+      "tradeStats": {
+        "totalRows": 6573,
+        "tradesWithPnl": 6572,
+        "winRate": 89.6,
+        "bestPct": 34.58,
+        "worstPct": -5.67,
+        "avgWinPct": 7.95,
+        "avgLossPct": -1.59,
+        "biggestWinVal": 63.0,
+        "biggestLossVal": -20.22,
+        "totalPnlVal": -28.56
+      },
+      "trades": [
+        {
+          "time": "2026-09-05 21:10:24",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79914.48904348,
+          "pnl": 31.59
+        },
+        {
+          "time": "2026-09-05 21:10:04",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79914.5171297,
+          "pnl": 31.59
+        },
+        {
+          "time": "2026-09-05 20:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79920.64803611,
+          "pnl": 31.6
+        },
+        {
+          "time": "2026-09-05 19:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79987.1,
+          "pnl": 31.71
+        },
+        {
+          "time": "2026-09-05 19:10:12",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 80072.3,
+          "pnl": 31.85
+        },
+        {
+          "time": "2026-09-05 19:10:04",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 80074.2,
+          "pnl": 31.85
+        },
+        {
+          "time": "2026-09-05 18:30:04",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79854.0,
+          "pnl": 31.49
+        },
+        {
+          "time": "2026-09-05 17:30:03",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79659.29085869,
+          "pnl": 31.17
+        },
+        {
+          "time": "2026-09-05 17:10:15",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79678.10779348,
+          "pnl": 31.2
+        },
+        {
+          "time": "2026-09-05 17:10:05",
+          "ticker": "BTC",
+          "signal": "LONG 1x",
+          "entry": 60730.46,
+          "current": 79677.11546739,
+          "pnl": 31.2
+        }
+      ]
+    },
+    "stocks": {
+      "label": "Stocks (Dow 20)",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "CASH",
+        "1": "LONG 1x",
+        "2": "LONG 1.5x"
+      },
+      "cashSignal": 0,
+      "balance": 9918.14,
+      "freeCash": 9918.14,
+      "lastInference": "2026-09-04 14:00:22",
+      "positions": {
+        "AAPL": 0,
+        "AMGN": 0,
+        "AXP": 0,
+        "BA": 0,
+        "CAT": 0,
+        "CRM": 0,
+        "CSCO": 0,
+        "CVX": 0,
+        "DIS": 0,
+        "GS": 0,
+        "HD": 0,
+        "HON": 0,
+        "IBM": 0,
+        "JNJ": 0,
+        "JPM": 0,
+        "KO": 0,
+        "MCD": 0,
+        "MMM": 0,
+        "MSFT": 0,
+        "WMT": 0
+      },
+      "lastPrices": {
+        "AAPL": 319.97,
+        "AMGN": 437.23,
+        "AXP": 326.16,
+        "BA": 212.25,
+        "CAT": 813.94,
+        "CRM": 259.23,
+        "CSCO": 109.2,
+        "CVX": 208.6,
+        "DIS": 105.31,
+        "GS": 1038.61,
+        "HD": 321.05,
+        "HON": 209.61,
+        "IBM": 234.89,
+        "JNJ": 275.23,
+        "JPM": 358.64,
+        "KO": 88.07,
+        "MCD": 255.69,
+        "MMM": 168.56,
+        "MSFT": 499.7,
+        "WMT": 107.14
+      },
+      "modelVersion": "traditional_1d_v8_dd_control",
+      "modelCreatedDate": "2026-04-25",
+      "deployedAt": "2026-04-25 12:00:00",
+      "baselineAtDeploy": 10000.0,
+      "modelType": "DQN",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 1.8834883184070652,
+        "returnPct": 77.96888848034196,
+        "maxDD": 11.69362127464361
+      },
+      "equityCurve": [
+        {
+          "d": "Jul 8",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 9",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 10",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 11",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 12",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 13",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 14",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 15",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 16",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 17",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 18",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 19",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 20",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 21",
+          "v": 10007.8
+        },
+        {
+          "d": "Jul 22",
+          "v": 9999.28
+        },
+        {
+          "d": "Jul 23",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 24",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 25",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 26",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 27",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 28",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 29",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 30",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 31",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 1",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 2",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 3",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 4",
+          "v": 10006.8
+        },
+        {
+          "d": "Aug 5",
+          "v": 10006.14
+        },
+        {
+          "d": "Aug 6",
+          "v": 10011.15
+        },
+        {
+          "d": "Aug 7",
+          "v": 10012.7
+        },
+        {
+          "d": "Aug 8",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 9",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 10",
+          "v": 10002.42
+        },
+        {
+          "d": "Aug 11",
+          "v": 10001.04
+        },
+        {
+          "d": "Aug 12",
+          "v": 9993.99
+        },
+        {
+          "d": "Aug 13",
+          "v": 9996.91
+        },
+        {
+          "d": "Aug 14",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 15",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 16",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 17",
+          "v": 9997.74
+        },
+        {
+          "d": "Aug 18",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 19",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 20",
+          "v": 9998.06
+        },
+        {
+          "d": "Aug 21",
+          "v": 9989.8
+        },
+        {
+          "d": "Aug 22",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 23",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 24",
+          "v": 9995.79
+        },
+        {
+          "d": "Aug 25",
+          "v": 9989.6
+        },
+        {
+          "d": "Aug 26",
+          "v": 9998.23
+        },
+        {
+          "d": "Aug 27",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 28",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 29",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 30",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 31",
+          "v": 9995.34
+        },
+        {
+          "d": "Sep 1",
+          "v": 10013.14
+        },
+        {
+          "d": "Sep 2",
+          "v": 10014.02
+        },
+        {
+          "d": "Sep 3",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 4",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 5",
+          "v": 10000.0
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 16,
+      "tradingStartDate": "2026-04-27",
+      "tradingDays": 131,
+      "tradeStats": {
+        "totalRows": 3811,
+        "tradesWithPnl": 560,
+        "winRate": 44.3,
+        "bestPct": 11.66,
+        "worstPct": -7.37,
+        "avgWinPct": 2.46,
+        "avgLossPct": -1.58,
+        "biggestWinVal": 78.5,
+        "biggestLossVal": -51.49,
+        "totalPnlVal": -81.86
+      },
+      "trades": [
+        {
+          "time": "2026-09-05 20:45:06",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 20:00:11",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 19:45:13",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:00:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 17:45:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 16:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 16:00:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 15:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 14:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "traditional_1d_v27_v8_dd_penalty_sharp_focus_corrected"
+    },
+    "crypto_btc": {
+      "label": "Crypto BTC",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 10213.58,
+      "freeCash": 224.57,
+      "lastInference": "2026-09-05 00:00:13",
+      "positions": {
+        "BTC": 4
+      },
+      "lastPrices": {
+        "BTC": 79939.3438
+      },
+      "modelVersion": "btc_1d_v11_dd_sharp_balance",
+      "modelCreatedDate": "2026-05-08",
+      "deployedAt": "2026-05-12 10:00:16",
+      "baselineAtDeploy": 9995.71,
+      "modelType": "DQN",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 1.684134405176096,
+        "returnPct": 225.5192310661455,
+        "maxDD": 31.96777418707229
+      },
+      "equityCurve": [
+        {
+          "d": "Jul 8",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 9",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 10",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 11",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 12",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 13",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 14",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 15",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 16",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 17",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 18",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 19",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 20",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 21",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 22",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 23",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 24",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 25",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 26",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 27",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 28",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 29",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 30",
+          "v": 10000.0
+        },
+        {
+          "d": "Jul 31",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 1",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 2",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 3",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 4",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 5",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 6",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 7",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 8",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 9",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 10",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 11",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 12",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 13",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 14",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 15",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 16",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 17",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 18",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 19",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 20",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 21",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 22",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 23",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 24",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 25",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 26",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 27",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 28",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 29",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 30",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 31",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 1",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 2",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 3",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 4",
+          "v": 10000.0
+        },
+        {
+          "d": "Sep 5",
+          "v": 10000.0
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 1,
+      "tradingStartDate": "2026-05-02",
+      "tradingDays": 125,
+      "tradeStats": {
+        "totalRows": 5628,
+        "tradesWithPnl": 456,
+        "winRate": 10.3,
+        "bestPct": 1.4,
+        "worstPct": -23.46,
+        "avgWinPct": 0.53,
+        "avgLossPct": -12.65,
+        "biggestWinVal": 10210.7,
+        "biggestLossVal": -2224.69,
+        "totalPnlVal": 213.58
+      },
+      "trades": [
+        {
+          "time": "2026-09-05 21:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 20:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 20:00:13",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 0.0,
+          "current": 80058.207,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 20:00:10",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 19:15:04",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:00:12",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 0.0,
+          "current": 79845.629,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:00:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 17:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 16:15:03",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "btc_1d_v25_dd_sharp_baseline_recovery"
+    },
+    "crypto_multi": {
+      "label": "Crypto Multi (5)",
+      "broker": "Alpaca Paper",
+      "status": "paper",
+      "initialBalance": 10000.0,
+      "actionMap": {
+        "0": "SHORT 2x",
+        "1": "SHORT 1x",
+        "2": "CASH",
+        "3": "LONG 1x",
+        "4": "LONG 2x"
+      },
+      "cashSignal": 2,
+      "balance": 8347.47,
+      "freeCash": 7591.54,
+      "lastInference": "2026-09-05 16:30:10",
+      "positions": {
+        "BTC": 1,
+        "ETH": 4,
+        "AVAX": 0,
+        "LINK": 1,
+        "DOGE": 0
+      },
+      "lastPrices": {
+        "BTC": 79958.2734,
+        "ETH": 2476.74,
+        "AVAX": 7.605,
+        "LINK": 12.055,
+        "DOGE": 0.0921
+      },
+      "modelVersion": "4h_v13_sharpe_peak_dqn_extended_timesteps",
+      "modelCreatedDate": "2026-05-18",
+      "deployedAt": "2026-05-18 13:42:35",
+      "baselineAtDeploy": 9499.68,
+      "modelType": "PPO",
+      "timeframe": "4h",
+      "backtest": {
+        "sharpe": 3.8902264470814227,
+        "returnPct": 107.87332637620368,
+        "maxDD": 14.563854518720868
+      },
+      "equityCurve": [
+        {
+          "d": "Jul 8",
+          "v": 10008.68
+        },
+        {
+          "d": "Jul 9",
+          "v": 10045.09
+        },
+        {
+          "d": "Jul 10",
+          "v": 10021.91
+        },
+        {
+          "d": "Jul 11",
+          "v": 10006.95
+        },
+        {
+          "d": "Jul 12",
+          "v": 10001.65
+        },
+        {
+          "d": "Jul 13",
+          "v": 10002.83
+        },
+        {
+          "d": "Jul 14",
+          "v": 10018.69
+        },
+        {
+          "d": "Jul 15",
+          "v": 10040.67
+        },
+        {
+          "d": "Jul 16",
+          "v": 10033.16
+        },
+        {
+          "d": "Jul 17",
+          "v": 9989.79
+        },
+        {
+          "d": "Jul 18",
+          "v": 9998.96
+        },
+        {
+          "d": "Jul 19",
+          "v": 10003.04
+        },
+        {
+          "d": "Jul 20",
+          "v": 9993.03
+        },
+        {
+          "d": "Jul 21",
+          "v": 10001.07
+        },
+        {
+          "d": "Jul 22",
+          "v": 9989.44
+        },
+        {
+          "d": "Jul 23",
+          "v": 9956.52
+        },
+        {
+          "d": "Jul 24",
+          "v": 9976.95
+        },
+        {
+          "d": "Jul 25",
+          "v": 10034.78
+        },
+        {
+          "d": "Jul 26",
+          "v": 10004.85
+        },
+        {
+          "d": "Jul 27",
+          "v": 9997.66
+        },
+        {
+          "d": "Jul 28",
+          "v": 10013.55
+        },
+        {
+          "d": "Jul 29",
+          "v": 9981.52
+        },
+        {
+          "d": "Jul 30",
+          "v": 10000.08
+        },
+        {
+          "d": "Jul 31",
+          "v": 9979.53
+        },
+        {
+          "d": "Aug 1",
+          "v": 9946.55
+        },
+        {
+          "d": "Aug 2",
+          "v": 10006.93
+        },
+        {
+          "d": "Aug 3",
+          "v": 10004.75
+        },
+        {
+          "d": "Aug 4",
+          "v": 9999.11
+        },
+        {
+          "d": "Aug 5",
+          "v": 9997.16
+        },
+        {
+          "d": "Aug 6",
+          "v": 9995.99
+        },
+        {
+          "d": "Aug 7",
+          "v": 9995.1
+        },
+        {
+          "d": "Aug 8",
+          "v": 10004.7
+        },
+        {
+          "d": "Aug 9",
+          "v": 9999.01
+        },
+        {
+          "d": "Aug 10",
+          "v": 9992.81
+        },
+        {
+          "d": "Aug 11",
+          "v": 10033.71
+        },
+        {
+          "d": "Aug 12",
+          "v": 9996.57
+        },
+        {
+          "d": "Aug 13",
+          "v": 10007.41
+        },
+        {
+          "d": "Aug 14",
+          "v": 9999.5
+        },
+        {
+          "d": "Aug 15",
+          "v": 10034.27
+        },
+        {
+          "d": "Aug 16",
+          "v": 10027.28
+        },
+        {
+          "d": "Aug 17",
+          "v": 10029.13
+        },
+        {
+          "d": "Aug 18",
+          "v": 10002.7
+        },
+        {
+          "d": "Aug 19",
+          "v": 10005.59
+        },
+        {
+          "d": "Aug 20",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 21",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 22",
+          "v": 10000.0
+        },
+        {
+          "d": "Aug 23",
+          "v": 9994.79
+        },
+        {
+          "d": "Aug 24",
+          "v": 9999.73
+        },
+        {
+          "d": "Aug 25",
+          "v": 9980.68
+        },
+        {
+          "d": "Aug 26",
+          "v": 9975.26
+        },
+        {
+          "d": "Aug 27",
+          "v": 10006.83
+        },
+        {
+          "d": "Aug 28",
+          "v": 9956.32
+        },
+        {
+          "d": "Aug 29",
+          "v": 9984.05
+        },
+        {
+          "d": "Aug 30",
+          "v": 9992.78
+        },
+        {
+          "d": "Aug 31",
+          "v": 10014.37
+        },
+        {
+          "d": "Sep 1",
+          "v": 9977.0
+        },
+        {
+          "d": "Sep 2",
+          "v": 9958.77
+        },
+        {
+          "d": "Sep 3",
+          "v": 10048.48
+        },
+        {
+          "d": "Sep 4",
+          "v": 9977.76
+        },
+        {
+          "d": "Sep 5",
+          "v": 10010.45
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 5,
+      "tradingStartDate": "2026-05-02",
+      "tradingDays": 125,
+      "tradeStats": {
+        "totalRows": 5791,
+        "tradesWithPnl": 2676,
+        "winRate": 35.2,
+        "bestPct": 7.02,
+        "worstPct": -23.2,
+        "avgWinPct": 1.16,
+        "avgLossPct": -2.07,
+        "biggestWinVal": 78.22,
+        "biggestLossVal": -226.56,
+        "totalPnlVal": -1652.53
+      },
+      "trades": [
+        {
+          "time": "2026-09-05 20:30:11",
+          "ticker": "ETH",
+          "signal": "LONG 2x",
+          "entry": 2453.538,
+          "current": 2478.3,
+          "pnl": 1.01
+        },
+        {
+          "time": "2026-09-05 20:30:08",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 19:45:11",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 18:30:17",
+          "ticker": "ETH",
+          "signal": "LONG 2x",
+          "entry": 2453.538,
+          "current": 2463.515,
+          "pnl": 0.41
+        },
+        {
+          "time": "2026-09-05 18:30:09",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 17:45:07",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        },
+        {
+          "time": "2026-09-05 16:30:12",
+          "ticker": "AVAX",
+          "signal": "LONG 2x",
+          "entry": 7.4229,
+          "current": 7.535,
+          "pnl": 1.51
+        },
+        {
+          "time": "2026-09-05 16:30:12",
+          "ticker": "ETH",
+          "signal": "LONG 2x",
+          "entry": 2453.538,
+          "current": 2455.31,
+          "pnl": 0.07
+        },
+        {
+          "time": "2026-09-05 16:30:12",
+          "ticker": "BTC",
+          "signal": "LONG 2x",
+          "entry": 80632.736970602,
+          "current": 79724.3,
+          "pnl": -1.13
+        },
+        {
+          "time": "2026-09-05 16:30:08",
+          "ticker": "PORTFOLIO",
+          "signal": "CASH",
+          "entry": 0.0,
+          "current": 0.0,
+          "pnl": 0.0
+        }
+      ],
+      "candidateVersion": "4h_v24_sharpe_consolidation_dd_penalty_peak_recovery_feature_stability"
+    },
+    "crypto_multi_hl": {
+      "label": "Crypto Multi HL",
+      "broker": "Hyperliquid Testnet",
+      "status": "paper",
+      "initialBalance": 999.0,
+      "actionMap": {
+        "0": "SHORT 20x",
+        "1": "SHORT 10x",
+        "2": "SHORT 5x",
+        "3": "SHORT 3x",
+        "4": "SHORT 2x",
+        "5": "SHORT 1x",
+        "6": "CASH",
+        "7": "LONG 1x",
+        "8": "LONG 2x",
+        "9": "LONG 3x",
+        "10": "LONG 5x",
+        "11": "LONG 7x",
+        "12": "LONG 10x",
+        "13": "LONG 15x",
+        "14": "LONG 20x"
+      },
+      "cashSignal": 6,
+      "balance": 849.93,
+      "freeCash": 208.82,
+      "lastInference": "2026-09-05 00:45:11",
+      "positions": {
+        "BTC": 3,
+        "ETH": 7,
+        "SOL": 5,
+        "AVAX": 3,
+        "DOGE": 9
+      },
+      "lastPrices": {
+        "BTC": 80264.5,
+        "ETH": 2437.75,
+        "SOL": 103.68,
+        "AVAX": 7.6189,
+        "DOGE": 0.091774
+      },
+      "modelVersion": "hl_v2_15_grace_recovery_minimal",
+      "modelCreatedDate": "2026-06-12",
+      "deployedAt": "2026-06-12 09:49:36",
+      "baselineAtDeploy": 1042.9,
+      "modelType": "PPO",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 0.612,
+        "returnPct": 16.16,
+        "maxDD": 34.29
+      },
+      "equityCurve": [
+        {
+          "d": "Jul 8",
+          "v": 976.17
+        },
+        {
+          "d": "Jul 9",
+          "v": 1009.74
+        },
+        {
+          "d": "Jul 10",
+          "v": 989.32
+        },
+        {
+          "d": "Jul 11",
+          "v": 1001.77
+        },
+        {
+          "d": "Jul 12",
+          "v": 991.26
+        },
+        {
+          "d": "Jul 13",
+          "v": 943.18
+        },
+        {
+          "d": "Jul 14",
+          "v": 1006.66
+        },
+        {
+          "d": "Jul 15",
+          "v": 1024.15
+        },
+        {
+          "d": "Jul 16",
+          "v": 1012.76
+        },
+        {
+          "d": "Jul 17",
+          "v": 989.8
+        },
+        {
+          "d": "Jul 18",
+          "v": 986.75
+        },
+        {
+          "d": "Jul 19",
+          "v": 982.36
+        },
+        {
+          "d": "Jul 20",
+          "v": 999.76
+        },
+        {
+          "d": "Jul 21",
+          "v": 1011.94
+        },
+        {
+          "d": "Jul 22",
+          "v": 1007.33
+        },
+        {
+          "d": "Jul 23",
+          "v": 990.09
+        },
+        {
+          "d": "Jul 24",
+          "v": 957.14
+        },
+        {
+          "d": "Jul 25",
+          "v": 1016.38
+        },
+        {
+          "d": "Jul 26",
+          "v": 1026.19
+        },
+        {
+          "d": "Jul 27",
+          "v": 1038.3
+        },
+        {
+          "d": "Jul 28",
+          "v": 1004.92
+        },
+        {
+          "d": "Jul 29",
+          "v": 1022.25
+        },
+        {
+          "d": "Jul 30",
+          "v": 1028.37
+        },
+        {
+          "d": "Jul 31",
+          "v": 1028.54
+        },
+        {
+          "d": "Aug 1",
+          "v": 1006.25
+        },
+        {
+          "d": "Aug 2",
+          "v": 1018.23
+        },
+        {
+          "d": "Aug 3",
+          "v": 1025.38
+        },
+        {
+          "d": "Aug 4",
+          "v": 1030.0
+        },
+        {
+          "d": "Aug 5",
+          "v": 1005.1
+        },
+        {
+          "d": "Aug 6",
+          "v": 1032.11
+        },
+        {
+          "d": "Aug 7",
+          "v": 1005.91
+        },
+        {
+          "d": "Aug 8",
+          "v": 999.87
+        },
+        {
+          "d": "Aug 9",
+          "v": 1007.34
+        },
+        {
+          "d": "Aug 10",
+          "v": 1008.69
+        },
+        {
+          "d": "Aug 11",
+          "v": 974.06
+        },
+        {
+          "d": "Aug 12",
+          "v": 989.87
+        },
+        {
+          "d": "Aug 13",
+          "v": 991.46
+        },
+        {
+          "d": "Aug 14",
+          "v": 993.49
+        },
+        {
+          "d": "Aug 15",
+          "v": 986.74
+        },
+        {
+          "d": "Aug 16",
+          "v": 974.27
+        },
+        {
+          "d": "Aug 17",
+          "v": 977.01
+        },
+        {
+          "d": "Aug 18",
+          "v": 974.87
+        },
+        {
+          "d": "Aug 19",
+          "v": 950.21
+        },
+        {
+          "d": "Aug 20",
+          "v": 1071.1
+        },
+        {
+          "d": "Aug 21",
+          "v": 1144.62
+        },
+        {
+          "d": "Aug 22",
+          "v": 1185.55
+        },
+        {
+          "d": "Aug 23",
+          "v": 1147.64
+        },
+        {
+          "d": "Aug 24",
+          "v": 1125.56
+        },
+        {
+          "d": "Aug 25",
+          "v": 1078.71
+        },
+        {
+          "d": "Aug 26",
+          "v": 1058.66
+        },
+        {
+          "d": "Aug 27",
+          "v": 1165.51
+        },
+        {
+          "d": "Aug 28",
+          "v": 1080.33
+        },
+        {
+          "d": "Aug 29",
+          "v": 1036.49
+        },
+        {
+          "d": "Aug 30",
+          "v": 1026.85
+        },
+        {
+          "d": "Aug 31",
+          "v": 1031.78
+        },
+        {
+          "d": "Sep 1",
+          "v": 998.17
+        },
+        {
+          "d": "Sep 2",
+          "v": 1016.0
+        },
+        {
+          "d": "Sep 3",
+          "v": 1067.64
+        },
+        {
+          "d": "Sep 4",
+          "v": 1024.01
+        },
+        {
+          "d": "Sep 5",
+          "v": 1055.24
+        }
+      ],
+      "tradeCount": 118,
+      "openPositions": 5,
+      "tradingStartDate": "2026-05-17",
+      "tradingDays": 111,
+      "tradeStats": {
+        "totalRows": 6294,
+        "tradesWithPnl": 6289,
+        "winRate": 53.9,
+        "bestPct": 32.49,
+        "worstPct": -25.14,
+        "avgWinPct": 4.11,
+        "avgLossPct": -3.22,
+        "biggestWinVal": 150.32,
+        "biggestLossVal": -126.49,
+        "totalPnlVal": -149.07
+      },
+      "trades": [
+        {
+          "time": "2026-09-05 20:45:24",
+          "ticker": "DOGE",
+          "signal": "LONG 3x",
+          "entry": 0.078971,
+          "current": 0.091725,
+          "pnl": 16.15
+        },
+        {
+          "time": "2026-09-05 20:45:24",
+          "ticker": "AVAX",
+          "signal": "SHORT 3x",
+          "entry": 7.3878,
+          "current": 7.6239,
+          "pnl": -3.2
+        },
+        {
+          "time": "2026-09-05 20:45:24",
+          "ticker": "SOL",
+          "signal": "SHORT 1x",
+          "entry": 101.93,
+          "current": 103.71,
+          "pnl": -1.75
+        },
+        {
+          "time": "2026-09-05 20:45:24",
+          "ticker": "ETH",
+          "signal": "LONG 1x",
+          "entry": 2470.68,
+          "current": 2438.75,
+          "pnl": -1.29
+        },
+        {
+          "time": "2026-09-05 20:45:24",
+          "ticker": "BTC",
+          "signal": "SHORT 3x",
+          "entry": 80102.5,
+          "current": 80269.5,
+          "pnl": -0.21
+        },
+        {
+          "time": "2026-09-05 18:45:20",
+          "ticker": "DOGE",
+          "signal": "LONG 3x",
+          "entry": 0.078497,
+          "current": 0.087286,
+          "pnl": 11.2
+        },
+        {
+          "time": "2026-09-05 18:45:20",
+          "ticker": "AVAX",
+          "signal": "SHORT 3x",
+          "entry": 7.3878,
+          "current": 7.5458,
+          "pnl": -2.14
+        },
+        {
+          "time": "2026-09-05 18:45:20",
+          "ticker": "SOL",
+          "signal": "SHORT 1x",
+          "entry": 101.93,
+          "current": 103.01,
+          "pnl": -1.06
+        },
+        {
+          "time": "2026-09-05 18:45:20",
+          "ticker": "ETH",
+          "signal": "LONG 1x",
+          "entry": 2470.68,
+          "current": 2431.15,
+          "pnl": -1.6
+        },
+        {
+          "time": "2026-09-05 18:45:20",
+          "ticker": "BTC",
+          "signal": "SHORT 3x",
+          "entry": 80072.8,
+          "current": 80199.0,
+          "pnl": -0.16
+        }
+      ],
+      "candidateVersion": "hl_v2_16_margin_efficiency_optimizer"
+    },
+    "crypto_multi_hl_mainnet": {
+      "label": "Crypto Multi HL [LIVE]",
+      "broker": "Hyperliquid Mainnet",
+      "status": "live",
+      "initialBalance": 148.0,
+      "actionMap": {
+        "0": "SHORT 20x",
+        "1": "SHORT 10x",
+        "2": "SHORT 5x",
+        "3": "SHORT 3x",
+        "4": "SHORT 2x",
+        "5": "SHORT 1x",
+        "6": "CASH",
+        "7": "LONG 1x",
+        "8": "LONG 2x",
+        "9": "LONG 3x",
+        "10": "LONG 5x",
+        "11": "LONG 7x",
+        "12": "LONG 10x",
+        "13": "LONG 15x",
+        "14": "LONG 20x"
+      },
+      "cashSignal": 6,
+      "balance": 148.23,
+      "freeCash": 0.0,
+      "lastInference": "2026-06-10 06:46:58",
+      "positions": {},
+      "lastPrices": {
+        "BTC": 61395.98046875,
+        "ETH": 1630.5699462890625,
+        "SOL": 64.19000244140625,
+        "AVAX": 6.53000020980835,
+        "DOGE": 0.08363000303506851
+      },
+      "modelVersion": "hl_v2_6_sharpe_reward_shift",
+      "modelCreatedDate": "2026-05-18",
+      "modelType": "PPO",
+      "timeframe": "1d",
+      "backtest": {
+        "sharpe": 0.366,
+        "returnPct": 4.24,
+        "maxDD": 32.18
+      },
+      "equityCurve": [
+        {
+          "d": "Start",
+          "v": 148.0
+        },
+        {
+          "d": "Now",
+          "v": 148.23
+        }
+      ],
+      "tradeCount": 0,
+      "openPositions": 0,
+      "tradingStartDate": null,
+      "tradingDays": 0,
+      "tradeStats": null,
+      "trades": []
+    }
+  },
+  "strategy": {
+    "totalExperiments": 82,
+    "lastRun": "2026-09-04T10:00:14.695271",
+    "schedule": "Tue/Fri 08:00 UTC",
+    "pipelines": {
+      "crypto_btc": {
+        "status": "waiting_results",
+        "experiment": "btc_1d_v25_dd_sharp_baseline_recovery",
+        "paperStart": "",
+        "failures": 1
+      },
+      "crypto_multi": {
+        "status": "waiting_results",
+        "experiment": "4h_v24_sharpe_consolidation_dd_penalty_peak_recovery_feature_stability",
+        "paperStart": "",
+        "failures": 1
+      },
+      "stocks": {
+        "status": "waiting_results",
+        "experiment": "traditional_1d_v27_v8_dd_penalty_sharp_focus_corrected",
+        "paperStart": "",
+        "failures": 0
+      },
+      "crypto_multi_hl": {
+        "status": "waiting_results",
+        "experiment": "hl_v2_16_margin_efficiency_optimizer",
+        "paperStart": "",
+        "failures": 0
+      }
+    }
+  }
+}
