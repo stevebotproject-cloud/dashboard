@@ -16,10 +16,14 @@ jobs:
 
       - name: Fetch STEVE status
         run: |
-          curl -s --max-time 15 \
-            "${{ secrets.STEVE_API_URL }}" \
-            -o data/steve_status.json || echo '{"error":"fetch failed","lastUpdate":"'$(date -u +%Y-%m-%d\ %H:%M\ UTC)'"}' > data/steve_status.json
-
+          code=$(curl -s -o /tmp/status.json -w "%{http_code}" --max-time 30 --retry 2 --retry-delay 10 "${{ secrets.STEVE_API_URL }}") || code="curl_err_$?"
+          echo "HTTP: $code"
+          if [ "$code" = "200" ] && python3 -c "import json;d=json.load(open('/tmp/status.json'));assert 'workspaces' in d"; then
+            cp /tmp/status.json data/steve_status.json
+            echo "dati aggiornati"
+          else
+            echo "fetch fallito, mantengo i dati precedenti"
+          fi
       - name: Commit if changed
         run: |
           cd $GITHUB_WORKSPACE
