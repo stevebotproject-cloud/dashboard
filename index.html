@@ -134,7 +134,7 @@ function StratPanel({strategy}){const t=uT();if(!strategy)return null;return(<di
 
 function App(){const[dm,setDm]=useState(true);const[data,setData]=useState(null);const[ld,setLd]=useState(true);const[sel,setSel]=useState(null);const t=dm?themes.dark:themes.light;
   const doFetch=useCallback(async(live)=>{try{setLd(true);const u=live?LIVE_URL:DATA_URL+"?t="+Date.now();const r=await fetch(u);if(r.ok){setData(await r.json());}else if(live){const r2=await fetch(DATA_URL+"?t="+Date.now());if(r2.ok)setData(await r2.json());}}catch(e){console.error(e);try{const r2=await fetch(DATA_URL+"?t="+Date.now());if(r2.ok)setData(await r2.json());}catch(e2){}}finally{setLd(false);}},[]);
-  useEffect(()=>{doFetch(true);const i=setInterval(()=>doFetch(false),REFRESH_MS);return()=>clearInterval(i);},[doFetch]);
+  useEffect(()=>{doFetch(true);const i=setInterval(()=>doFetch(true),REFRESH_MS);return()=>clearInterval(i);},[doFetch]);
   const ws=data&&data.workspaces?data.workspaces:{};
   return(<TC.Provider value={t}><div style={{minHeight:"100vh",background:t.bg,color:t.text,fontFamily:"'Inter',-apple-system,sans-serif",transition:"background 0.3s,color 0.3s"}}><Header dm={dm} setDm={setDm} data={data} ld={ld} onRefresh={()=>doFetch(true)}/><div style={{padding:"22px 28px",maxWidth:1200,margin:"0 auto"}}>
     {!data&&ld&&<div style={{textAlign:"center",padding:"60px 0",color:t.textMuted}}><div style={{fontSize:32,marginBottom:12}}>{"\u26A1"}</div><div style={{fontSize:14,fontWeight:600}}>Connecting to STEVE...</div></div>}
